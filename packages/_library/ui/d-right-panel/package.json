@@ -1,0 +1,9 @@
+{
+  "name": "@support/d-right-panel",
+  "version": "0.0.1",
+  "description": "右面板",
+  "license": "MIT",
+  "module": "./index.js",
+  "dependencies": {
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "@support/d-form-smart",
+    "version": "0.0.1",
+    "description": "智能表单",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

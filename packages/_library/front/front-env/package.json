@@ -1,0 +1,8 @@
+{
+  "name": "@support/front-env",
+  "version": "0.0.1",
+  "description": "env",
+  "main": "./index.js",
+  "license": "MIT",
+  "dependencies": {}
+}

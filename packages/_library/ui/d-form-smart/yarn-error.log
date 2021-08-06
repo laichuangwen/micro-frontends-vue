@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install --mutex network:42424 --non-interactive
+
+PATH: 
+  /Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.14.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/@support%2fvayne-filter-wrapper: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1184:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+  	"name": "@support/vayne-form-smart-plus",
+  	"version": "0.0.1",
+  	"description": "vayne-智能表单-plus",
+  	"main": "./src/index.js",
+  	"license": "MIT",
+  	"dependencies": {
+  		"@support/vayne-filter-wrapper": "0.0.1",
+  		"@support/vayne-group-smart": "0.0.1"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,20 @@
+{
+  "name": "@admin/operation",
+  "version": "0.0.1",
+  "private": true,
+  "description": "后台管理微应用:operation",
+  "runtime": {
+    "port": 10003
+  },
+  "scripts": {
+    "dev": "node ci/devServer",
+    "build": "node ci/build"
+  },
+  "dependencies": {
+    "@support/front-create-app": "0.0.1",
+    "@support/front-launch": "0.0.1",
+    "@admin/front-app": "0.0.1"
+  },
+  "devDependencies": {
+  }
+}

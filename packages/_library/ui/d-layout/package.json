@@ -1,0 +1,9 @@
+{
+    "name": "@support/d-layout",
+    "version": "0.0.1",
+    "description": "布局容器",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "devDependencies": {
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@support/front-util",
+  "version": "0.0.1",
+  "description": "工具库",
+  "main": "./index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "4.0.2",
+    "lodash": "4.17.11",
+    "moment": "2.24.0",
+    "qs": "6.7.0"
+  }
+}

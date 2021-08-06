@@ -1,0 +1,21 @@
+{
+  "name": "@admin/main",
+  "version": "0.0.1",
+  "private": true,
+  "description": "后台管理主应用:main",
+  "runtime": {
+    "port": 10000
+  },
+  "scripts": {
+    "dev": "node ci/devServer",
+    "build": "node ci/build"
+  },
+  "dependencies": {
+    "@support/front-create-app": "0.0.1",
+    "@support/front-launch": "0.0.1",
+    "@admin/front-app": "0.0.1",
+    "qiankun": "^2.4.4"
+  },
+  "devDependencies": {
+  }
+}

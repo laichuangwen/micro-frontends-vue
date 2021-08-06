@@ -1,0 +1,9 @@
+{
+  "name": "@support/d-icon",
+  "version": "0.0.1",
+  "description": "图标组件",
+  "license": "MIT",
+  "module": "./index.js",
+  "dependencies": {
+  }
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "label": "登录系统",
+        "value": "LOGIN"
+    },
+    {
+        "label": "用户系统",
+        "value": "USER"
+    }
+]

@@ -1,0 +1,9 @@
+{
+  "name": "@admin/com-layout",
+  "version": "0.0.1",
+  "description": "后台管理/布局容器",
+  "main": "src/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@support/front-reset-css",
+  "version": "0.0.1",
+  "description": "样式重置-web",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {}
+}

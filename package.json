@@ -1,0 +1,31 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "docker": "npm-run-all --parallel build:* && node scripts/docker",
+    "start": "npm-run-all --parallel start:*",
+    "build": "npm-run-all --parallel build:*",
+    "install:main": "cd packages/admin/front/_main && yarn",
+    "start:main": "cd packages/admin/front/_main && yarn dev",
+    "build:main": "cd packages/admin/front/_main && yarn build",
+    "install:bms": "cd packages/admin/front/bms && yarn",
+    "start:bms": "cd packages/admin/front/bms && yarn dev",
+    "build:bms": "cd packages/admin/front/bms && yarn build",
+    "install:rbac": "cd packages/admin/front/rbac && yarn",
+    "start:rbac": "cd packages/admin/front/rbac && yarn dev",
+    "build:rbac": "cd packages/admin/front/rbac && yarn build",
+    "install:operation": "cd packages/admin/front/operation && yarn",
+    "start:operation": "cd packages/admin/front/operation && yarn dev",
+    "build:operation": "cd packages/admin/front/operation && yarn build"
+  },
+  "dependencies": {
+    "chalk": "2.4.1",
+    "commander": "4.1.0",
+    "fs-extra": "^10.0.0",
+    "husky": "4.2.3",
+    "lerna": "4.0.0",
+    "npm-run-all": "^4.1.5",
+    "shelljs": "^0.8.4"
+  }
+}

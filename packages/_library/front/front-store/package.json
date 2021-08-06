@@ -1,0 +1,10 @@
+{
+  "name": "@support/front-store",
+  "version": "0.0.1",
+  "description": "前端-状态管理",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "vuex": "3.6.2"
+  }
+}

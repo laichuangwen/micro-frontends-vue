@@ -1,0 +1,9 @@
+{
+  "name": "@support/d-menu",
+  "version": "0.0.1",
+  "description": "菜单列表组件",
+  "license": "MIT",
+  "module": "./index.js",
+  "dependencies": {
+  }
+}
