@@ -1,0 +1,26 @@
+{
+	"name": "@docs/front-app",
+	"version": "0.0.1",
+	"license": "MIT",
+  	"main": "src/index.js",
+	"dependencies": {
+		"element-ui": "2.15.3",
+		"@docs/com-demo-block": "0.0.1",
+		"@docs/com-md-heading": "0.0.1",
+		"@docs/com-md-link": "0.0.1",
+		"@docs/com-layout": "0.0.1",
+		"@support/d-layout": "0.0.1",
+		"@support/d-menu": "0.0.1",
+		"@support/d-nav-bar": "0.0.1",
+		"@support/d-right-panel": "0.0.1",
+		"@support/d-icon": "0.0.1",
+		"@support/front-api": "0.0.1",
+		"@support/front-env": "0.0.1",
+		"@support/front-reset-css": "0.0.1",
+		"@support/front-router": "0.0.1",
+		"@support/front-store": "0.0.1",
+		"@support/front-util": "0.0.1",
+		"@support/front-theme": "0.0.1"
+
+	}
+}

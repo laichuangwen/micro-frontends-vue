@@ -1,0 +1,9 @@
+{
+    "name": "@docs/com-md-link",
+    "version": "0.0.1",
+    "description": "开发文档/md-link",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+    }
+}

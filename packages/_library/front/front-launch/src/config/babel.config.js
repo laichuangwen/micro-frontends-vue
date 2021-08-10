@@ -4,6 +4,7 @@ const {
 } = require('../utils');
 const base = {
   presets: [
+    require.resolve('@vue/babel-preset-jsx'),
     [require.resolve('@babel/preset-env'), {
       targets: { // 目标环境
         browsers: [ // 浏览器
@@ -24,8 +25,7 @@ const base = {
     // require.resolve('@babel/plugin-proposal-optional-chaining'),
     // require.resolve('@babel/plugin-proposal-private-methods'),
     // require.resolve('@babel/plugin-syntax-dynamic-import'),
-    // require.resolve('@babel/plugin-transform-named-capturing-groups-regex'),
-    // require.resolve('babel-plugin-transform-vue-jsx'),
+    // require.resolve('@babel/plugin-transform-named-capturing-groups-regex')
   ],
 };
 module.exports = merge(base, getVueConfig('babel.config.js'));

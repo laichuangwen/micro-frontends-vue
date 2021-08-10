@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const isProduction = process.env.NODE_ENV === 'production';
 const { VueLoaderPlugin } = require('vue-loader')
 const path = require('path');
+const markdownLoader = require('./markdown.js')
 const {
     resolve,
 } = require('../utils');
@@ -112,6 +113,26 @@ module.exports = {
                     filename: 'fonts/[name].[contenthash:8][ext][query]',
                 },
             },
+            {
+                test: /\.icon$/,
+                use: {
+                    loader: 'svg-sprite-loader',
+                    options: {
+                        runtimeGenerator: require.resolve('./icon/svg-custom-runtime-generator'),
+                        symbolId: 'icon-[hash:5]',
+                        symbolRegExp: /([^<>/\\\|:""\*\?]+)\.icon$/
+                    }
+                }
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'vue-loader'
+                    },
+                    markdownLoader
+                ]
+            }
         ]
     },
     resolve: {

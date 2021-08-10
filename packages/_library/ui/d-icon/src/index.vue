@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import './loadCommonIcon'
 export default {
     name: 'DIcon',
     props: {
@@ -37,7 +38,7 @@ export default {
                 return icon.default.id
             }
             if (typeof icon === 'string') {
-                return icon
+                return icon.startsWith('icon-') ? icon : `icon-${icon}`
             }
         },
         style() {
