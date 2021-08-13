@@ -24,7 +24,7 @@ module.exports = (devWebpackConfig) => {
                 spinner.start()
             }
             spinner.color = 'blue';
-            spinner.text = chalk.blue(`${message}${args}(${pre}%)`);
+            spinner.text = chalk.blue(`${message}${args}(${pre}%)\n`);
         } else {
             if (spinner.isSpinning) {
                 spinner.stop()
