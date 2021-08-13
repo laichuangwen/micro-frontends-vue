@@ -1,0 +1,73 @@
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text($type: content) {
+    @if $type == title1 { // 大标题
+        font-weight: inherit;
+        font-size: $font-size-huge;
+        color: $color-title;
+    }
+
+    @else if $type == title2 { // 主标题
+        font-weight: bold;
+        font-size: $font-size-large;
+        color: $color-title;
+    }
+
+    @else if $type == title3 { // 小标题
+        font-weight: bold;
+        font-size: $font-size-medium;
+        color: $color-title;
+    }
+
+    @else if $type == content { // 正文
+        font-weight: inherit;
+        font-size: $font-size-base;
+        color: $color-content;
+    }
+
+    @else if $type == disabled { // 失效文本
+        font-weight: inherit;
+        font-size: $font-size-base;
+        color: $color-disabled;
+    }
+
+    @else if $type == desc { // 说明文本
+        font-weight: inherit;
+        font-size: $font-size-base;
+        color: $color-sub;
+    }
+
+    @else if $type == info { // 资讯文本
+        font-weight: inherit;
+        font-size: $font-size-base;
+        color: $color-content;
+    }
+
+    @else if $type == link { // 链接文本
+        font-weight: inherit;
+        font-size: $font-size-base;
+        color: $color-primary;
+    }
+
+    @else if $type == error { // 错误文本
+        font-weight: inherit;
+        font-size: $font-size-small;
+        color: $color-error;
+    }
+
+    @else if $type == warning { // 警告文本
+        font-weight: inherit;
+        font-size: $font-size-small;
+        color: $color-warning;
+    }
+
+    @else if $type == sub { // 辅助文本
+        font-weight: inherit;
+        font-size: $font-size-small;
+        color: $color-sub;
+    }
+}

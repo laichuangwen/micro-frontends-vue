@@ -72,7 +72,7 @@ export default {
                 return
             }
             if (this.type === 'anchor') {
-                const url = `/${this.$route.name.replace('.', '/')}#${name}`
+                const url = `/${this.$route.name.replaceAll('.', '/')}#${name}`
                 history.pushState(null, url, url)
                 return
             }
@@ -122,5 +122,6 @@ export default {
 .children {
     margin-left: 24px;
     border-left: 1px solid #e6ecf1;
+        padding-bottom: 8px;
 }
 </style>

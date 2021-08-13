@@ -19,5 +19,23 @@ registerMicroApps([
         entry: '//localhost:20001',
         container: '#app-container',
         activeRule: '/core',
-    }
+    },
+    {
+        name: 'ui',
+        entry: '//localhost:20002',
+        container: '#app-container',
+        activeRule: '/ui',
+    },
+    {
+        name: 'guide',
+        entry: '//localhost:20003',
+        container: '#app-container',
+        activeRule: '/guide',
+    },
+    {
+        name: 'product-admin',
+        entry: '//localhost:20004',
+        container: '#app-container',
+        activeRule: '/product-admin',
+    },
 ]);

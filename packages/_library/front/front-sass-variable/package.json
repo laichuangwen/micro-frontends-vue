@@ -1,8 +1,0 @@
-{
-  "name": "@support/front-sass-variable",
-  "version": "0.0.1",
-  "description": "sass-variable",
-  "main": "index.scss",
-  "license": "MIT",
-  "dependencies": {}
-}

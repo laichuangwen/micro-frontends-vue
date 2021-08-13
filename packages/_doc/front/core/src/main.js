@@ -10,7 +10,7 @@ const option = {
   env: {
     sys: 'core',
   },
-  base: 'core',
+  base: '/',
   routes: routerList
 }
 

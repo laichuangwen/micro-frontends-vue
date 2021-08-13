@@ -1,0 +1,12 @@
+{
+    "name": "@support/pack-docker",
+    "version": "0.0.1",
+    "description": "打包docker",
+    "main": "./index.js",
+    "license": "MIT",
+    "dependencies": {
+        "shelljs": "^0.8.4",
+        "fs-extra": "^10.0.0"
+    },
+    "devDependencies": {}
+}

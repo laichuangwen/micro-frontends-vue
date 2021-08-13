@@ -49,57 +49,26 @@ export default {
             type: Array,
             default: () => [
                 {
-                    path: 'guide',
+                    path: '/guide',
                     title: '指南',
                 },
                 {
-                    title: '生态',
-                    groups: [
-                        {
-                            title: 'UI库',
-                            children: [
-                                {
-                                    path: 'ecosystem-ui/dmui',
-                                    title: 'ui'
-                                },
-                            ]
-                        },
-                        {
-                            title: '核心模块',
-                            children: [
-                                {
-                                    path: 'ecosystem-core/router',
-                                    title: '路由管理'
-                                },
-                                {
-                                    path: 'ecosystem-core/store',
-                                    title: '状态管理'
-                                },
-                                {
-                                    path: 'ecosystem-core/websocket',
-                                    title: '消息推送'
-                                },
-                                {
-                                    path: 'ecosystem-core/api',
-                                    title: '请求处理'
-                                },
-                                {
-                                    path: 'ecosystem-core',
-                                    title: '...更多'
-                                }
-                            ]
-                        }
-                    ]
+                    path: '/core',
+                    title: '核心模块',
+                },
+                {
+                    path: '/ui',
+                    title: '通用UI',
                 },
                 {
                     title: '项目',
                     groups: [
                         {
-                            title: '后台管理系统',
+                            title: '业务系统',
                             children: [
                                 {
-                                    path: 'product/oa',
-                                    title: '业务系统'
+                                    path: '/product-admin',
+                                    title: '后台管理'
                                 }
                             ]
                         }

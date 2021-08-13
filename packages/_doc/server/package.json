@@ -1,0 +1,30 @@
+{
+  "name": "@docs/server",
+  "private": true,
+  "description": "文档服务",
+  "scripts": {
+    "serve": "node ci/devServer",
+    "docker": "node ci/docker",
+    "start": "npm-run-all --parallel start:*",
+    "build": "npm-run-all --parallel build:*",
+    "install:main": "cd ../front/_main && yarn",
+    "start:main": "cd ../front/_main && yarn dev",
+    "build:main": "cd ../front/_main && yarn build",
+    "install:core": "cd ../front/core && yarn",
+    "start:core": "cd ../front/core && yarn dev",
+    "build:core": "cd ../front/core && yarn build",
+    "install:guide": "cd ../front/guide && yarn",
+    "start:guide": "cd ../front/guide && yarn dev",
+    "build:guide": "cd ../front/guide && yarn build",
+    "install:ui": "cd ../front/ui && yarn",
+    "start:ui": "cd ../front/ui && yarn dev",
+    "build:ui": "cd ../front/ui && yarn build",
+    "install:product-admin": "cd ../front/product-admin && yarn",
+    "start:product-admin": "cd ../front/product-admin && yarn dev",
+    "build:product-admin": "cd ../front/product-admin && yarn build"
+  },
+  "dependencies": {
+    "@support/pack-docker": "0.0.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

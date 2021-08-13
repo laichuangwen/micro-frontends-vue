@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ora = require('ora')
 module.exports = (prodWebpackConfig) => {
   // 提示加载
-  const spinner = ora('building for production...');
+  const spinner = ora('building for production... \n');
   spinner.start()
   webpack(prodWebpackConfig, (err, status) => {
     //加载动画结束

@@ -24,7 +24,7 @@ const cssLoderCommon = [
         loader: 'sass-resources-loader',
         options: {
             resources: [
-                path.resolve(__dirname, '../../node_modules/@support/front-sass-variable/index.scss'),
+                path.resolve(__dirname, '../../node_modules/@support/front-sass/index.scss'),
             ]
         }
     }

@@ -7,7 +7,6 @@ import com from './com';
 import theme from './theme';
 import api from './api';
 import store from './store';
-// import hyperlink from './hyperlink';
 import { RouterMicroHooks, RouterMainHooks, InitMainStore, InitMicroStore } from './main.js';
 
 export default (app, option) => {
@@ -19,7 +18,6 @@ export default (app, option) => {
         app.task('工具方法', app => util(app))
             .task('环境', app => env(app, option))
             .task('路由', app => router(app, option))
-            // .task('内部链接', ['路由'], app => hyperlink(app))
             .task('基础组件', app => com(app))
             .task('图标', app => icon(app))
             .task('主题', ['基础组件'], app => theme(app))
@@ -32,7 +30,6 @@ export default (app, option) => {
         app.task('工具方法', app => util(app))
             .task('环境', app => env(app, option))
             .task('路由', app => router(app, option))
-            // .task('内部链接', ['路由'], app => hyperlink(app))
             .task('基础组件', app => com(app))
             .task('图标', app => icon(app))
             .task('主题', ['基础组件'], app => theme(app))

@@ -1,0 +1,37 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install --mutex network:42424 --non-interactive
+
+PATH: 
+  /Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.14.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npm.taobao.org
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  {
+  	"name": "@support/pack-docker",
+  	"version": "0.0.1",
+  	"description": "打包docker",
+  	"main": "./index.js",
+  	"license": "MIT",
+  	"dependencies": {
+  		"fs-extra": "^10.0.0",
+  		"shelljs": "^0.8.4"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
