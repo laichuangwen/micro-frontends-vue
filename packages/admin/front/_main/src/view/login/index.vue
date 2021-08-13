@@ -1,6 +1,5 @@
 <template>
     <div>
-        login
         <el-button type="primary" @click="$router.replace('center')">登录进去</el-button>
     </div>
 </template>

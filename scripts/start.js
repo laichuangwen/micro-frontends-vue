@@ -16,7 +16,7 @@ program
         manager
             .task(`解析所有包`, getAllPkgs)
             .task(`获取启动包`, getStartPkgs(port))
-            .task(`执行钩子`, runHook('devServer'))
+            .task(`运行服务`, runHook('devServer'))
             .start()
     })
 

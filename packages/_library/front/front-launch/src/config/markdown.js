@@ -43,7 +43,7 @@ const defaultRender = (tokens, idx, options, env, slf) => {
 }
 
 module.exports = {
-    loader: 'vue-markdown-loader/lib/markdown-compiler',
+    loader: '@support/vue-markdown-loader/lib/markdown-compiler',
     options: {
         raw: true,
         use: [

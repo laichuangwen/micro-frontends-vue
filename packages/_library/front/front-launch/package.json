@@ -5,6 +5,7 @@
 	"main": "./src/index.js",
 	"license": "MIT",
 	"dependencies": {
+		"@support/vue-markdown-loader": "0.0.1",
 		"@support/front-sass": "0.0.1",
 		"@babel/core": "^7.14.8",
 		"@babel/helper-module-imports": "^7.14.5",
@@ -47,8 +48,6 @@
 		"transliteration": "1.1.11",
 		"vue": "2.6.14",
 		"vue-loader": "^15.9.8",
-		"vue-markdown-loader": "2.4.1",
-		"vue-md-loader": "^1.1.10",
 		"vue-style-loader": "^4.1.3",
 		"vue-template-compiler": "^2.6.14",
 		"webpack": "^5.48.0",
