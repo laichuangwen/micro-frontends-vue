@@ -38,17 +38,6 @@
     ```
     验收环境，`number`类型，方便多环境的判断
 
-### namespace
-- 类型 `string`
-- 用法:  
-    ```js
-    const { namespace } = Vue.$ctx
-    if(namespace === 'desk'){
-        console.log('我在工作台页面中')
-    }
-    ```
-    命名空间
-
 ### base
 - 类型 `string`
 - 用法:  
