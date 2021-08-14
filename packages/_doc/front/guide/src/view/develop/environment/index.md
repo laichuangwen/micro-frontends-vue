@@ -1,6 +1,6 @@
 
 * 安装git
-    * [^2.7.1](https://git-scm.com/downloads)
+    * [^2.24.3](https://git-scm.com/downloads)
 * 安装node
     * [^12.14.0](https://npm.taobao.org/mirrors/node/v12.14.0/)
 * 安装yarn

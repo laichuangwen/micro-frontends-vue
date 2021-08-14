@@ -527,7 +527,7 @@
 
 "@lerna/npm-install@4.0.0":
   version "4.0.0"
-  resolved "https://registry.nlark.com/@lerna/npm-install/download/@lerna/npm-install-4.0.0.tgz#31180be3ab3b7d1818a1a0c206aec156b7094c78"
+  resolved "https://registry.npm.taobao.org/@lerna/npm-install/download/@lerna/npm-install-4.0.0.tgz#31180be3ab3b7d1818a1a0c206aec156b7094c78"
   integrity sha1-MRgL46s7fRgYoaDCBq7BVrcJTHg=
   dependencies:
     "@lerna/child-process" "4.0.0"
@@ -1636,7 +1636,7 @@ conventional-commits-parser@^3.2.0:
 
 conventional-recommended-bump@^6.1.0:
   version "6.1.0"
-  resolved "https://registry.npm.taobao.org/conventional-recommended-bump/download/conventional-recommended-bump-6.1.0.tgz#cfa623285d1de554012f2ffde70d9c8a22231f55"
+  resolved "https://registry.nlark.com/conventional-recommended-bump/download/conventional-recommended-bump-6.1.0.tgz#cfa623285d1de554012f2ffde70d9c8a22231f55"
   integrity sha1-z6YjKF0d5VQBLy/95w2ciiIjH1U=
   dependencies:
     concat-stream "^2.0.0"
