@@ -1,0 +1,6 @@
+{
+    "hooks": {
+        "commit-msg": "env FORCE_COLOR=1 node scripts/commitmsg",
+        "pre-commit": "env FORCE_COLOR=1 node scripts/precommit"
+    }
+}
