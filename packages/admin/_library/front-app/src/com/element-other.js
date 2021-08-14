@@ -29,8 +29,7 @@ import PageHeader from 'element-ui/lib/page-header';
 import CascaderPanel from 'element-ui/lib/cascader-panel';
 import Drawer from 'element-ui/lib/drawer';
 import Popconfirm from 'element-ui/lib/popconfirm';
-import Scrollbar from 'element-ui/lib/scrollbar.js';
-
+import Scrollbar from 'element-ui/lib/scrollbar';
 
 const webUI = [
     Drawer,
@@ -60,14 +59,14 @@ const webUI = [
     PageHeader,
     CascaderPanel,
     Popconfirm,
-    Scrollbar
-]
+    Scrollbar,
+];
 
 export default {
     install(Vue) {
         // 加载dmui
-        webUI.forEach(el => {
-            Vue.component(el.name, el)
-        })
-    }
-}
+        webUI.forEach((el) => {
+            Vue.component(el.name, el);
+        });
+    },
+};

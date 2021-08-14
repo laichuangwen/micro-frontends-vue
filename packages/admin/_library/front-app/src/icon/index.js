@@ -1,3 +1,4 @@
-import './iconfont.js'
+import './iconfont';
+
 export default () => {
-}
+};

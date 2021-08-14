@@ -6,6 +6,6 @@ export default [
     {
         path: '/device',
         component: () => import('./view/device/index.vue'),
-    }
-   
-]
+    },
+
+];

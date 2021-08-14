@@ -3,7 +3,7 @@ export default [
         name: 'bms',
         path: '/',
         component: () => import('./view/index.vue'),
-        meta:{
+        meta: {
             title: '业务系统',
         },
         children: [
@@ -11,16 +11,16 @@ export default [
                 name: 'bms.home',
                 path: 'home',
                 component: () => import('./view/home/index.vue'),
-                meta:{
+                meta: {
                     title: '首页',
-                    permission: 'bms.home'
+                    permission: 'bms.home',
                 },
             },
             {
                 name: 'bms.guide',
                 path: 'guide',
                 component: () => import('./view/guide/index.vue'),
-                meta:{
+                meta: {
                     title: '引导页',
                 },
             },
@@ -28,7 +28,7 @@ export default [
                 name: 'bms.router',
                 path: 'router',
                 component: () => import('./view/router/index.vue'),
-                meta:{
+                meta: {
                     title: '路由嵌套',
                 },
                 children: [
@@ -36,7 +36,7 @@ export default [
                         name: 'bms.router.list',
                         path: 'list',
                         component: () => import('./view/router/list/index.vue'),
-                        meta:{
+                        meta: {
                             title: '列表',
                         },
                     },
@@ -44,7 +44,7 @@ export default [
                         name: 'bms.router.list2',
                         path: 'list2',
                         component: () => import('./view/router/list2/index.vue'),
-                        meta:{
+                        meta: {
                             title: '列表2',
                         },
                         children: [
@@ -52,14 +52,14 @@ export default [
                                 name: 'bms.router.list2.list',
                                 path: 'list',
                                 component: () => import('./view/router/list2/list/index.vue'),
-                                meta:{
+                                meta: {
                                     title: '列表2-列表',
                                 },
                             },
-                        ]
-                    }
-                ]
+                        ],
+                    },
+                ],
             },
-        ]
+        ],
     },
-]
+];

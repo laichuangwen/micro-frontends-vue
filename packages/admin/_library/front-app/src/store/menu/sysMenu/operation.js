@@ -17,6 +17,6 @@ export default [
                 path: '/operation/device',
             },
 
-        ]
-    }
-]
+        ],
+    },
+];

@@ -1,15 +1,13 @@
-
 const path = require('path');
 const fs = require('fs');
-const pkg = require(`${process.cwd()}/package.json`)
+
+const pkg = require(`${process.cwd()}/package.json`);
 module.exports = {
     resolve(fileName) {
         // 不传返回 rootPath
-        if (!fileName)
-            return process.cwd();
+        if (!fileName) return process.cwd();
         // 传值 判断该文件是否存在，存在返回路径
-        if (fs.existsSync(path.join(process.cwd(), fileName)))
-            return path.join(process.cwd(), fileName);
+        if (fs.existsSync(path.join(process.cwd(), fileName))) return path.join(process.cwd(), fileName);
         return '';
     },
     pkgName() {
@@ -28,8 +26,8 @@ module.exports = {
     // 读取ip
     getIp() {
         const interfaces = require('os').networkInterfaces();
-        for (let devName in interfaces) {
-            for (let alias of interfaces[devName]) {
+        for (const devName in interfaces) {
+            for (const alias of interfaces[devName]) {
                 if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
                     return alias.address;
                 }
@@ -44,4 +42,4 @@ module.exports = {
         }
         return {};
     },
-}
+};

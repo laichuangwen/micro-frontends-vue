@@ -24,13 +24,13 @@ const webUI = [
     Avatar,
     Skeleton,
     Empty,
-]
+];
 
 export default {
     install(Vue) {
         // 加载dmui
-        webUI.forEach(el => {
-            Vue.component(el.name, el)
-        })
-    }
-}
+        webUI.forEach((el) => {
+            Vue.component(el.name, el);
+        });
+    },
+};

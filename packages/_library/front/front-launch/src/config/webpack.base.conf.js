@@ -1,18 +1,17 @@
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
+
 const isProduction = process.env.NODE_ENV === 'production';
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
-const markdownLoader = require('./markdown.js')
+const markdownLoader = require('./markdown');
 const {
     resolve,
 } = require('../utils');
 
 const cssLoderCommon = [
     {
-        loader: "postcss-loader",
+        loader: 'postcss-loader',
         options: {
             postcssOptions: {
                 config: path.resolve(__dirname, './postcss.config.js'),
@@ -25,21 +24,21 @@ const cssLoderCommon = [
         options: {
             resources: [
                 path.resolve(__dirname, '../../node_modules/@support/front-sass/index.scss'),
-            ]
-        }
-    }
-]
+            ],
+        },
+    },
+];
 module.exports = {
     mode: 'development',
     context: resolve('/'),
     entry: {
-        main: "./src/main.js",
+        main: './src/main.js',
     },
     output: {
         publicPath: '/',
         filename: 'js/[name].[contenthash:8].js',
         // 把子应用打包成 umd 库格式
-        library: `main`,
+        library: 'main',
         libraryTarget: 'umd',
         clean: true, // 打包后清除旧的
     },
@@ -52,12 +51,12 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         configFile: path.resolve(__dirname, './babel.config.js'),
-                    }
-                }
+                    },
+                },
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
             },
             {
                 test: /\.(sa|sc|c)ss$/i,
@@ -65,8 +64,8 @@ module.exports = {
                     {
                         resourceQuery: /module/,
                         use: [
-                            !isProduction ? 'vue-style-loader' :
-                                {
+                            !isProduction ? 'vue-style-loader'
+                                : {
                                     loader: MiniCssExtractPlugin.loader,
                                     options: {
                                         esModule: false,
@@ -76,28 +75,28 @@ module.exports = {
                                 loader: 'css-loader',
                                 options: {
                                     modules: {
-                                        localIdentName: '[local]_[hash:base64:8]'
+                                        localIdentName: '[local]_[hash:base64:8]',
                                     },
 
-                                }
+                                },
                             },
-                            ...cssLoderCommon // 公共部分
-                        ]
+                            ...cssLoderCommon, // 公共部分
+                        ],
                     },
                     {
                         use: [
-                            !isProduction ? 'vue-style-loader' :
-                                {
+                            !isProduction ? 'vue-style-loader'
+                                : {
                                     loader: MiniCssExtractPlugin.loader,
                                     options: {
                                         esModule: false,
                                     },
                                 },
                             'css-loader',
-                            ...cssLoderCommon,// 公共部分
-                        ]
-                    }
-                ]
+                            ...cssLoderCommon, // 公共部分
+                        ],
+                    },
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -120,20 +119,20 @@ module.exports = {
                     options: {
                         runtimeGenerator: require.resolve('./icon/svg-custom-runtime-generator'),
                         symbolId: 'icon-[hash:5]',
-                        symbolRegExp: /([^<>/\\\|:""\*\?]+)\.icon$/
-                    }
-                }
+                        symbolRegExp: /([^<>/\\\|:""\*\?]+)\.icon$/,
+                    },
+                },
             },
             {
                 test: /\.md$/,
                 use: [
                     {
-                        loader: 'vue-loader'
+                        loader: 'vue-loader',
                     },
-                    markdownLoader
-                ]
-            }
-        ]
+                    markdownLoader,
+                ],
+            },
+        ],
     },
     resolve: {
         modules: [
@@ -155,7 +154,7 @@ module.exports = {
         new HtmlWebpackPlugin(resolve('index.html') ? { template: resolve('index.html') } : { template: path.resolve(__dirname, '../index.html') }),
         // 提取样式
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css'
+            filename: 'css/[name].[contenthash:8].css',
         }),
     ],
     // 警告 webpack 的性能提示
@@ -166,5 +165,5 @@ module.exports = {
         // 生成文件的最大体积
         maxAssetSize: 30000000,
         // 只给出 js 文件的性能提示
-    }
+    },
 };

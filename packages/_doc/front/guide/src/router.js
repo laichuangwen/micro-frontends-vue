@@ -1,4 +1,3 @@
-
 export default [
     {
         name: 'guide',
@@ -41,7 +40,7 @@ export default [
                             title: '风格指南',
                         },
                     },
-                ]
+                ],
             },
             {
                 name: 'guide.feedback',
@@ -51,6 +50,6 @@ export default [
                     title: '反馈',
                 },
             },
-        ]
-    }
-]
+        ],
+    },
+];

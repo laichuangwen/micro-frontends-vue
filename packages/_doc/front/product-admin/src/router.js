@@ -1,4 +1,3 @@
-
 export default [
     {
         name: 'product-admin',
@@ -34,6 +33,6 @@ export default [
                     title: 'Vue.$ctx',
                 },
             },
-        ]
-    }
-]
+        ],
+    },
+];

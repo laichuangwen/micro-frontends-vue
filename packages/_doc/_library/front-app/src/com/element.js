@@ -10,13 +10,13 @@ const webUI = [
     Header,
     Aside,
     Main,
-]
+];
 export default {
     install(Vue) {
         // 加载dmui
-        webUI.forEach(el => {
-            Vue.component(el.name, el)
-        })
+        webUI.forEach((el) => {
+            Vue.component(el.name, el);
+        });
         Vue.prototype.$message = Message;
-    }
-}
+    },
+};

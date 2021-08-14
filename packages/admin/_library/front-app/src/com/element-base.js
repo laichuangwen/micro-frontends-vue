@@ -11,10 +11,9 @@ import Link from 'element-ui/lib/link';
 import Row from 'element-ui/lib/row';
 import Col from 'element-ui/lib/col';
 // element icon
-import 'element-ui/lib/theme-chalk/icon.css'
+import 'element-ui/lib/theme-chalk/icon.css';
 // collapse 展开折叠
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
-
 
 const webUI = [
     Row,
@@ -26,13 +25,13 @@ const webUI = [
     Footer,
     Icon,
     Link,
-    CollapseTransition
-]
+    CollapseTransition,
+];
 export default {
     install(Vue) {
         // 加载dmui
-        webUI.forEach(el => {
-            Vue.component(el.name, el)
-        })
-    }
-}
+        webUI.forEach((el) => {
+            Vue.component(el.name, el);
+        });
+    },
+};

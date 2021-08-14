@@ -1,4 +1,3 @@
+import Link from './Link';
 
-import Link from './Link.js'
-
-export default Link
+export default Link;

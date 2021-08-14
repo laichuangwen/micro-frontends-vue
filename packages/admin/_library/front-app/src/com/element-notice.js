@@ -17,5 +17,5 @@ export default {
         Vue.prototype.$prompt = MessageBox.prompt;
         Vue.prototype.$notify = Notification;
         Vue.prototype.$message = Message;
-    }
-}
+    },
+};

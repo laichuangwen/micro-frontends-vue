@@ -28,8 +28,6 @@ import DatePicker from 'element-ui/lib/date-picker';
 import TimeSelect from 'element-ui/lib/time-select';
 import TimePicker from 'element-ui/lib/time-picker';
 
-
-
 const webUI = [
     Input,
     InputNumber,
@@ -56,13 +54,13 @@ const webUI = [
     DatePicker,
     TimeSelect,
     TimePicker,
-]
+];
 
 export default {
     install(Vue) {
         // 加载dmui
-        webUI.forEach(el => {
-            Vue.component(el.name, el)
-        })
-    }
-}
+        webUI.forEach((el) => {
+            Vue.component(el.name, el);
+        });
+    },
+};

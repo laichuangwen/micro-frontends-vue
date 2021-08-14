@@ -1,4 +1,3 @@
-
 export default [
     {
         name: 'ui',
@@ -17,7 +16,7 @@ export default [
                     title: '介绍',
                 },
 
-            }
-        ]
-    }
-]
+            },
+        ],
+    },
+];

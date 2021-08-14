@@ -1,29 +1,32 @@
-import menu from './menu.js';
-import view from './view.js';
+import menu from './menu';
+import view from './view';
+
 export default {
     namespaced: true,
     modules: {
         menu,
-        view
+        view,
     },
     state: {
         logo: true,
         fixedHeader: true,
-        width: ''
+        width: '',
     },
     mutations: {
         update(state, data) {
             for (const i in data) {
-                state.hasOwnProperty(i) && (state[i] = data[i])
+                if (Object.prototype.hasOwnProperty.call(data, i)) {
+                    state[i] = data[i];
+                }
             }
-        }
+        },
     },
     actions: {
         update({ commit }, { key, value }) {
             if (key && value !== undefined) {
                 // 更新状态机数据
-                commit('update', { [key]: value })
+                commit('update', { [key]: value });
             }
-        }
-    }
-}
+        },
+    },
+};

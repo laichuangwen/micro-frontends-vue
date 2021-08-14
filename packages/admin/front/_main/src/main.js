@@ -1,17 +1,18 @@
-import { registerMicroApps, initGlobalState } from 'qiankun';
-import createApp from '@support/front-create-app'
+import { registerMicroApps } from 'qiankun';
+import createApp from '@support/front-create-app';
 import frontApp from '@admin/front-app';
 import routerList from './router.js';
+
 const option = {
     env: {
         sys: '_main',
     },
-    routes: routerList
-}
-const app = createApp()
+    routes: routerList,
+};
+const app = createApp();
 frontApp(app, option)
     .use(app.getAllTask())
-    .start()
+    .start();
 // 注册主应用
 registerMicroApps([
     {

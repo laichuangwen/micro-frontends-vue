@@ -1,40 +1,39 @@
-
 export default {
     name: 'md-heading',
-    //inject: ['DMdWrapper'],
+    // inject: ['DMdWrapper'],
     methods: {
         dispatch(componentName, eventName, params) {
-            let parent = this.$parent || this.$root
-            let name = parent.$options.componentName
+            let parent = this.$parent || this.$root;
+            let name = parent.$options.componentName;
 
             while (parent && (!name || name !== componentName)) {
-                parent = parent.$parent
+                parent = parent.$parent;
 
                 if (parent) {
-                    name = parent.$options.componentName
+                    name = parent.$options.componentName;
                 }
             }
             if (parent) {
-                parent.$emit.apply(parent, [eventName].concat(params))
+                parent.$emit.apply(parent, [eventName].concat(params)); // eslint-disable-line
             }
-        }
+        },
     },
     render() {
         const customtag = this.$attrs.type // eslint-disable-line
-        return <customtag>{this.$slots.default}</customtag>
+        return <customtag>{this.$slots.default}</customtag>;
     },
     mounted() {
-        const data ={
+        const data = {
             name: this.$attrs.id,
-            meta:{
+            meta: {
                 title: this.$el.innerText.replace(/ #$/, ''),
-            }
-        }
-        this.$store.commit('menu/addAnchor', data)
+            },
+        };
+        this.$store.commit('menu/addAnchor', data);
     },
     destroyed() {
         this.$store.commit('menu/update', {
-            anchor: []
-        })
-    }
-}
+            anchor: [],
+        });
+    },
+};

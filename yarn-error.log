@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/laichuangwen/.jenv/shims:/Users/laichuangwen/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  16.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/laichuangwen/Desktop/github/manage-sys/package.json: Unexpected token } in JSON at position 517
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "root",
+    "private": true,
+    "scripts": {
+      "bootstrap": "lerna bootstrap",
+      "start": "lerna bootstrap && node scripts/start",
+      "build": "lerna bootstrap && node scripts/build"
+    },
+    "dependencies": {
+      "chalk": "2.4.1",
+      "commander": "4.1.0",
+      "eslint": "^7.32.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.24.0",
+      "eslint-plugin-vue": "^7.16.0",
+      "fs-extra": "^10.0.0",
+      "husky": "4.2.3",
+      "lerna": "4.0.0",
+      "shelljs": "^0.8.4",
+      
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

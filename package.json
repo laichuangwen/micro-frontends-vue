@@ -4,11 +4,17 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && node scripts/start",
-    "build": "lerna bootstrap && node scripts/build"
+    "build": "lerna bootstrap && node scripts/build",
+    "lint": "node scripts/lint"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "chalk": "2.4.1",
     "commander": "4.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-vue": "^7.16.0",
     "fs-extra": "^10.0.0",
     "husky": "4.2.3",
     "lerna": "4.0.0",

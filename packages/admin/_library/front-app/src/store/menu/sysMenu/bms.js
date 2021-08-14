@@ -40,13 +40,13 @@ export default [
                                 icon: 'icon-add-account',
                                 route: 'bms.router.list2.list',
                                 path: '/bms/router/list2/list',
-                            }
+                            },
 
-                        ]
+                        ],
                     },
-                ]
+                ],
             },
 
-        ]
-    }
-]
+        ],
+    },
+];

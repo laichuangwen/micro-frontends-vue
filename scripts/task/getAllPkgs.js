@@ -2,35 +2,36 @@
  * 遍历`package`生成模块列表，json格式
  */
 
-const { existsSync, readdirSync, statSync } = require('fs')
-const ROOT_PATH = process.cwd()
+const { existsSync, readdirSync, statSync } = require('fs');
+
+const ROOT_PATH = process.cwd();
 
 const transformDeps = (json, key) => {
-    if (!json[key]) return []
+    if (!json[key]) return [];
 
-    const { deps } = json[key]
-    let arr = [...deps]
+    const { deps } = json[key];
+    let arr = [...deps];
 
-    deps.forEach(dep => {
+    deps.forEach((dep) => {
         arr = [
             ...arr,
-            ...transformDeps(json, dep)
-        ]
-    })
+            ...transformDeps(json, dep),
+        ];
+    });
 
-    return arr
-}
+    return arr;
+};
 
-const getSimplePkgs = dir => {
-    const file_path = `${dir}/package.json`
-    const test_path = `${dir}/ci/test.js`
-    const build_path = `${dir}/ci/build.js`
-    const deploy_path = `${dir}/ci/deploy.js`
-    const devServer_path = `${dir}/ci/devServer.js`
+const getSimplePkgs = (dir) => {
+    const file_path = `${dir}/package.json`;
+    const test_path = `${dir}/ci/test.js`;
+    const build_path = `${dir}/ci/build.js`;
+    const deploy_path = `${dir}/ci/deploy.js`;
+    const devServer_path = `${dir}/ci/devServer.js`;
 
-    let json = {}
+    let json = {};
 
-    const package_json = existsSync(file_path) && require(file_path)
+    const package_json = existsSync(file_path) && require(file_path);
 
     if (package_json && package_json.name !== 'root') {
         json[package_json.name] = {
@@ -45,46 +46,46 @@ const getSimplePkgs = dir => {
                 build: existsSync(build_path),
                 deploy: existsSync(deploy_path),
                 devServer: existsSync(devServer_path),
-                ...package_json.runtime
+                ...package_json.runtime,
             },
             realPath: dir,
             path: dir.replace(`${ROOT_PATH}/`, ''),
             deps: [
-                ...Object.keys(package_json.dependencies || {}).filter(key => key.startsWith('@support')),
-                ...Object.keys(package_json.devDependencies || {}).filter(key => key.startsWith('@support'))
-            ]
-        }
+                ...Object.keys(package_json.dependencies || {}).filter((key) => key.startsWith('@support')),
+                ...Object.keys(package_json.devDependencies || {}).filter((key) => key.startsWith('@support')),
+            ],
+        };
     } else {
-        readdirSync(dir).forEach(item => {
+        readdirSync(dir).forEach((item) => {
             if (item !== 'node_modules') {
-                const name = `${dir}/${item}`
-                const stats = statSync(name)
+                const name = `${dir}/${item}`;
+                const stats = statSync(name);
                 if (stats.isDirectory()) {
                     json = {
                         ...json,
-                        ...getSimplePkgs(name)
-                    }
+                        ...getSimplePkgs(name),
+                    };
                 }
             }
-        })
+        });
     }
-    return json
-}
+    return json;
+};
 
-module.exports = async({ ctx, log }) => {
-    log('读取所有package.json')
-    const json = getSimplePkgs(ROOT_PATH)
-    log('校验依赖&生成dep字段')
-    Object.keys(json).forEach(key => {
-        json[key].deps.forEach(dep => {
+module.exports = async ({ ctx, log }) => {
+    log('读取所有package.json');
+    const json = getSimplePkgs(ROOT_PATH);
+    log('校验依赖&生成dep字段');
+    Object.keys(json).forEach((key) => {
+        json[key].deps.forEach((dep) => {
             // 检查包名是否拼写错误
             if (!json[dep]) {
-                const chalk = require('chalk')
-                console.log(`  ${chalk.underline(`${json[key].realPath}/package.json`)}\n    ${chalk.red(`找不到依赖 `)} ${dep} 不存在`)
-                process.exit(1)
+                const chalk = require('chalk');
+                console.log(`  ${chalk.underline(`${json[key].realPath}/package.json`)}\n    ${chalk.red('找不到依赖 ')} ${dep} 不存在`);
+                process.exit(1);
             }
-        })
-        json[key].deps = Array.from(new Set(transformDeps(json, key)))
-    })
-    ctx.allPkgs = json
-}
+        });
+        json[key].deps = Array.from(new Set(transformDeps(json, key)));
+    });
+    ctx.allPkgs = json;
+};

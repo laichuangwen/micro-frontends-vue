@@ -3,7 +3,7 @@ export default [
         name: 'rbac',
         path: '/',
         component: () => import('./view/index.vue'),
-        meta:{
+        meta: {
             title: '权限系统',
         },
         children: [
@@ -11,7 +11,7 @@ export default [
                 name: 'rbac.account',
                 path: 'account',
                 component: () => import('./view/account/index.vue'),
-                meta:{
+                meta: {
                     title: '账号',
                 },
             },
@@ -19,11 +19,11 @@ export default [
                 name: 'rbac.menu',
                 path: 'menu',
                 component: () => import('./view/menu/index.vue'),
-                meta:{
+                meta: {
                     title: '菜单列表',
 
                 },
             },
-        ]
+        ],
     },
-]
+];

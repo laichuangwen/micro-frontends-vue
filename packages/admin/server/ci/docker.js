@@ -1,7 +1,9 @@
 const path = require('path');
-const frontPath = path.join(process.cwd(), '../front')
-const distPath = path.resolve(process.cwd(), './dist')
-const pack = require('@support/pack-docker')
+
+const frontPath = path.join(process.cwd(), '../front');
+const distPath = path.resolve(process.cwd(), './dist');
+const pack = require('@support/pack-docker');
+
 pack({
     frontPath,
     distPath,
@@ -9,6 +11,5 @@ pack({
     base: 'ali-mirror',
     username: '18377779061',
     password: 'chuang6505305',
-    name: 'admin:0.0.1'
-})
-
+    name: 'admin:0.0.1',
+});

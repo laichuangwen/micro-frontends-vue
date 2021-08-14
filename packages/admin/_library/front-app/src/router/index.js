@@ -1,5 +1,5 @@
-import Router from '@support/front-router'
+import Router from '@support/front-router';
 
 export default (app, option) => {
-    Router(app,option)
-}
+    Router(app, option);
+};

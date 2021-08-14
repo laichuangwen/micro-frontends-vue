@@ -6,7 +6,7 @@ export default {
         gender: '',
         name: 'Ewen',
         thumbAvatar: '',
-        uid: ''
+        uid: '',
     },
     mutations: {
 
@@ -15,14 +15,14 @@ export default {
          */
         update(state, data) {
             for (const i in data) {
-                state.hasOwnProperty(i) && (state[i] = data[i])
+                if (Object.prototype.hasOwnProperty.call(data, i)) {
+                    state[i] = data[i];
+                }
             }
-        }
+        },
     },
     actions: {
-        async init({
-            commit
-        }) {
+        async init() {
             // try {
             //     const data = await api.get('/sso-api/admin-user/current')
             //     commit('update', data)
@@ -30,6 +30,6 @@ export default {
             //     console.log('error', error)
             // }
             // Vue.$ctx.store.commit('user/permission/update', data.funcCodes)
-        }
-    }
-}
+        },
+    },
+};

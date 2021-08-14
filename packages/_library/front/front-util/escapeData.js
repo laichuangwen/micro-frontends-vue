@@ -1,12 +1,11 @@
+let tempDom = '';
 
-let tempDom = ''
-
-export default val => {
+export default (val) => {
     if (!tempDom) {
-        tempDom = document.createElement('div')
+        tempDom = document.createElement('div');
     }
 
-    tempDom.innerText = val
+    tempDom.innerText = val;
 
-    return tempDom.innerHTML
-}
+    return tempDom.innerHTML;
+};

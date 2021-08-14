@@ -1,3 +1,3 @@
-import FormSmartPlus from './index.vue'
+import FormSmartPlus from './index.vue';
 
-export default FormSmartPlus
+export default FormSmartPlus;

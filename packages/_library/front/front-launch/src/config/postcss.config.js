@@ -1,10 +1,11 @@
-const merge = require('deepmerge')
+const merge = require('deepmerge');
 const {
-  getVueConfig,
+    getVueConfig,
 } = require('../utils.js');
+
 const baseConfig = {
-  plugins: {
-    "postcss-preset-env": {},
-  }
+    plugins: {
+        'postcss-preset-env': {},
+    },
 };
 module.exports = merge(baseConfig, getVueConfig('postcss.config.js'));

@@ -1,28 +1,27 @@
-
-import VueRouter from 'vue-router'
-import App from './App.vue'
+import VueRouter from 'vue-router';
+import App from './App.vue';
 
 export default ({ Vue, VueOption }, option) => {
-    Vue.use(VueRouter)
+    Vue.use(VueRouter);
     const router = new VueRouter({
         mode: 'history',
-        base: `/`,
+        base: '/',
         linkActiveClass: 'active',
         routes: [],
-        scrollBehavior(to, from, savedPosition) {
+        scrollBehavior(to) {
             if (to.hash) {
                 return {
-                    selector: to.hash
-                }
+                    selector: to.hash,
+                };
             }
-            return { x: 0, y: 0 }
+            return { x: 0, y: 0 };
         },
-        ...option
-    })
+        ...option,
+    });
 
-    Vue.$ctx.router = router
+    Vue.$ctx.router = router;
 
-    VueOption.router = router
-    VueOption.render = h => h(App)
-    VueOption.components = { App }
-}
+    VueOption.router = router;
+    VueOption.render = (h) => h(App);
+    VueOption.components = { App };
+};

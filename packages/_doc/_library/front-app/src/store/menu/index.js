@@ -1,18 +1,20 @@
 export default {
     namespaced: true,
     state: {
-        anchor: []
+        anchor: [],
     },
     mutations: {
         update(state, val) {
             for (const i in val) {
-                state[i] = val[i]
+                if (Object.prototype.hasOwnProperty.call(val, i)) {
+                    state[i] = val[i];
+                }
             }
         },
         addAnchor(state, val) {
-            state.anchor.push(val)
-        }
+            state.anchor.push(val);
+        },
     },
     actions: {
-    }
-}
+    },
+};

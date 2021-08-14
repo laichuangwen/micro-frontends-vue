@@ -2,39 +2,39 @@
 const defaultConfig = {
     default: {
         title: '',
-        tip: ''
+        tip: '',
     },
     denied: {
         title: '您没有访问权限哦~',
-        tip: '请联系管理员开通相关权限'
+        tip: '请联系管理员开通相关权限',
     },
     disabled: {
         title: '您没有查看该数据的权限哦~',
-        tip: ''
+        tip: '',
     },
     deleted: {
         title: '您查看的内容不存在',
-        tip: ''
-    }
-}
+        tip: '',
+    },
+};
 class View {
     constructor(data) {
         if (typeof data === 'string' || !data) {
             data = {
-                type: data || ''
-            }
+                type: data || '',
+            };
         }
-        const type = data.type
+        const { type } = data;
         const view = {
             ...defaultConfig[type || 'default'],
-            ...data
-        }
+            ...data,
+        };
         Object.entries(view).forEach(([
             key,
-            value
+            value,
         ]) => {
-            this[key] = value
-        })
+            this[key] = value;
+        });
     }
 }
 export default {
@@ -42,18 +42,20 @@ export default {
     state: {
         type: '', // enum: 空显示router-view denied显示未授权 deleted显示被删除
         title: '',
-        tip: ''
+        tip: '',
     },
     mutations: {
         update(state, data) {
             for (const i in data) {
-                state.hasOwnProperty(i) && (state[i] = data[i])
+                if (Object.prototype.hasOwnProperty.call(data, i)) {
+                    state[i] = data[i];
+                }
             }
-        }
+        },
     },
     actions: {
         toggle({ commit }, data) {
-            commit('update', new View(data))
-        }
-    }
-}
+            commit('update', new View(data));
+        },
+    },
+};

@@ -1,23 +1,23 @@
+const program = require('commander');
+const getAllPkgs = require('./task/getAllPkgs');
+const getStartPkgs = require('./task/getStartPkgs');
+const runHook = require('./task/runHook');
 
-const program = require('commander')
-const getAllPkgs = require('./task/getAllPkgs')
-const getStartPkgs = require('./task/getStartPkgs')
-const runHook = require('./task/runHook')
 program
     .name('yarn start')
     .usage('[port]')
-    .description('启动本地服务，port(可选)代表服务端口')
+    .description('启动本地服务，port(可选)代表服务端口');
 
 program
     .arguments('[port]')
-    .action(async port => {
-        const manager = require('./task/manager')
+    .action(async (port) => {
+        const manager = require('./task/manager');
         manager
-            .task(`解析所有包`, getAllPkgs)
-            .task(`获取启动包`, getStartPkgs(port))
-            .task(`执行编译`, runHook('build'))
-            .task(`打包镜像`, runHook('docker'))
-            .start()
-    })
+            .task('解析所有包', getAllPkgs)
+            .task('获取启动包', getStartPkgs(port))
+            .task('执行编译', runHook('build'))
+            .task('打包镜像', runHook('docker'))
+            .start();
+    });
 
-program.parse(process.argv)
+program.parse(process.argv);

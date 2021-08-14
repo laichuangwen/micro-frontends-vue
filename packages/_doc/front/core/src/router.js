@@ -1,4 +1,3 @@
-
 export default [
     {
         name: 'core',
@@ -13,7 +12,7 @@ export default [
                 name: 'core.introduce',
                 path: 'introduce',
                 meta: {
-                    title: '介绍'
+                    title: '介绍',
                 },
                 component: () => import('./view/introduce/index.md'),
             },
@@ -21,7 +20,7 @@ export default [
                 name: 'core.env',
                 path: 'env',
                 meta: {
-                    title: 'Env 环境变量'
+                    title: 'Env 环境变量',
                 },
                 component: () => import('./view/env/index.md'),
             },
@@ -97,9 +96,9 @@ export default [
                         },
                         component: () => import('./view/sass/mixin/index.md'),
                     },
-                ]
+                ],
             },
-        ]
+        ],
 
-    }
-]
+    },
+];

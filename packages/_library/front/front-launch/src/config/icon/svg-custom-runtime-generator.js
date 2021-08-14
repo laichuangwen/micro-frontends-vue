@@ -1,11 +1,11 @@
-const { stringifyRequest } = require('loader-utils')
+const { stringifyRequest } = require('loader-utils');
 const {
     stringify,
     stringifySymbol,
     generateImport,
     generateExport,
-    generateSpritePlaceholder
-} = require('svg-sprite-loader/lib/utils')
+    generateSpritePlaceholder,
+} = require('svg-sprite-loader/lib/utils');
 
 /**
  * @param {Object} params
@@ -16,11 +16,13 @@ const {
  * @return {string}
  */
 function runtimeGenerator(params) {
-    const { symbol, config, context } = params
-    const { extract, esModule, spriteModule, symbolModule, runtimeCompat } = config
-    let runtime
+    const { symbol, config, context } = params;
+    const {
+        extract, esModule, spriteModule, symbolModule, runtimeCompat,
+    } = config;
+    let runtime;
     if (extract) {
-        const spritePlaceholder = generateSpritePlaceholder(symbol.request.file)
+        const spritePlaceholder = generateSpritePlaceholder(symbol.request.file);
         const data = `{
       id: ${stringify(symbol.useId)},
       viewBox: ${stringify(symbol.viewBox)},
@@ -28,12 +30,12 @@ function runtimeGenerator(params) {
       toString: function () {
         return this.url;
       }
-    }`
+    }`;
 
-        runtime = generateExport(data, esModule)
+        runtime = generateExport(data, esModule);
     } else {
-        const spriteModuleImport = stringifyRequest({ context }, spriteModule)
-        const symbolModuleImport = stringifyRequest({ context }, symbolModule)
+        const spriteModuleImport = stringifyRequest({ context }, spriteModule);
+        const symbolModuleImport = stringifyRequest({ context }, symbolModule);
 
         runtime = [
             generateImport('SpriteSymbol', symbolModuleImport, esModule),
@@ -44,11 +46,11 @@ function runtimeGenerator(params) {
       var symbol = new SpriteSymbol(rs)`,
             'var result = sprite.add(symbol)',
 
-            generateExport(runtimeCompat ? '"#" + symbol.id' : 'symbol', esModule)
-        ].join(';\n')
+            generateExport(runtimeCompat ? '"#" + symbol.id' : 'symbol', esModule),
+        ].join(';\n');
     }
 
-    return runtime
+    return runtime;
 }
 
-module.exports = runtimeGenerator
+module.exports = runtimeGenerator;

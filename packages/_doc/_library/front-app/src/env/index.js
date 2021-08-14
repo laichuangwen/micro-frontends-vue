@@ -1,8 +1,8 @@
+import Env from '@support/front-env';
 
-import Env from '@support/front-env'
 export default (app, option) => {
-    const { env } = option
+    const { env } = option;
     Env(app, {
-        env
-    })
-}
+        env,
+    });
+};
