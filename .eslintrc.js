@@ -4,7 +4,7 @@ module.exports = {
         commonjs: true,
         es2021: true,
     },
-    parser: 'babel-eslint',
+    parser: 'vue-eslint-parser',
     extends: 'airbnb-base',
     globals: {
         Atomics: 'readonly',
@@ -12,6 +12,7 @@ module.exports = {
         SharedArrayBuffer: 'readonly',
     },
     parserOptions: {
+        parser: 'babel-eslint',
         ecmaVersion: 12,
         ecmaFeatures: {
             globalReturn: true,
