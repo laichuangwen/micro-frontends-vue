@@ -16,7 +16,7 @@
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-vue": "^7.16.0",
     "fs-extra": "^10.0.0",
-    "husky": "4.3.8",
+    "husky": "4.2.3",
     "lerna": "4.0.0",
     "shelljs": "^0.8.4",
     "simple-git": "^2.43.0"
