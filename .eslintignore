@@ -1,7 +1,2 @@
 node_modules
 dist
-package.json
-yarn.lock
-docker-compose.yml
-Dockerfile
-nginx.conf

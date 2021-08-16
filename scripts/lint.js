@@ -3,9 +3,10 @@ const { ESLint } = require('eslint');
 
 module.exports = async ({ ctx, log }) => {
     const eslint = new ESLint({ fix: true });
-
+    // 只检验js和vue文件
+    const files = ctx.files.filter((file) => /\.(js|vue)$/ig.test(file));
     // 2. Lint files. This doesn't modify target files.
-    const results = await eslint.lintFiles(ctx.files);
+    const results = await eslint.lintFiles(files);
 
     // 3. Modify the files with the fixed code.
     await ESLint.outputFixes(results);
