@@ -2,7 +2,6 @@ const { default: chalk } = require('chalk');
 const { ESLint } = require('eslint');
 
 module.exports = async ({ ctx, log }) => {
-    console.log(ctx.files);
     const eslint = new ESLint({ fix: true });
 
     // 2. Lint files. This doesn't modify target files.
