@@ -6,7 +6,7 @@
     "serve": "node ci/devServer",
     "docker": "node ci/docker",
     "start": "npm-run-all --parallel start:*",
-    "build": "npm-run-all --parallel build:*",
+    "build": "node ci/build",
     "install:main": "cd ../front/_main && yarn",
     "start:main": "cd ../front/_main && yarn dev",
     "build:main": "cd ../front/_main && yarn build",
@@ -24,6 +24,7 @@
     "build:product-admin": "cd ../front/product-admin && yarn build"
   },
   "dependencies": {
+    "@support/pack-build": "0.0.1",
     "@support/pack-docker": "0.0.1",
     "npm-run-all": "^4.1.5"
   }
