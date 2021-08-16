@@ -5,7 +5,7 @@ module.exports = async ({ ctx }) => {
     const eslint = new ESLint({ fix: true });
 
     // 2. Lint files. This doesn't modify target files.
-    const results = await eslint.lintFiles(['packages', 'scripts']);
+    const results = await eslint.lintFiles(ctx.files);
 
     // 3. Modify the files with the fixed code.
     await ESLint.outputFixes(results);

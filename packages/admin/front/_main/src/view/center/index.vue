@@ -15,7 +15,12 @@ export default {
     data() {
         return {
         };
-    }
+    },
+    methods: {
+        jump(name) {
+
+        },
+    },
 };
 </script>
 
