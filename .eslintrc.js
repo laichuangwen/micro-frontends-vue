@@ -41,6 +41,7 @@ module.exports = {
         'global-require': 0,
         'prefer-promise-reject-errors': 'off',
         'no-restricted-syntax': 0,
+        'import/no-unresolved': 0,
         'import/prefer-default-export': 0,
         'import/extensions': 0,
         'class-methods-use-this': 0,
