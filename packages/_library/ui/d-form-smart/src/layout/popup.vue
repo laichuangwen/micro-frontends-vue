@@ -36,64 +36,64 @@
 </template>
 
 <script>
-import VFilterWrapper from '@support/vayne-filter-wrapper'
-import FormItem from '../components/FormItem.vue'
+import VFilterWrapper from '@support/vayne-filter-wrapper';
+import FormItem from '../components/FormItem.vue';
 
 export default {
     components: {
         FormItem,
-        VFilterWrapper
+        VFilterWrapper,
     },
     props: {
         model: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         layoutConfig: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         formItems: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     inject: ['rootCompnent'],
     data() {
         return {
 
-        }
+        };
     },
     computed: {
         _layoutConfig() {
             const Default = {
-                outsideNum: 1
-            }
+                outsideNum: 1,
+            };
             const result = {
                 ...Default,
-                ...this.layoutConfig
-            }
+                ...this.layoutConfig,
+            };
 
-            return result
+            return result;
         },
         filterWrapperEvents() {
             const result = {
                 'on-reset': this.onReset,
-                ...this._layoutConfig.filterWrapper?.on
-            }
-            return result
+                ...this._layoutConfig.filterWrapper?.on,
+            };
+            return result;
         },
         popupFormItems() {
-            const result = this.formItems.slice(this._layoutConfig.outsideNum, this.formItems.length)
-            return result
-        }
+            const result = this.formItems.slice(this._layoutConfig.outsideNum, this.formItems.length);
+            return result;
+        },
     },
     methods: {
         onReset() {
-            this.rootCompnent.filterReset()
-        }
-    }
-}
+            this.rootCompnent.filterReset();
+        },
+    },
+};
 
 </script>
 

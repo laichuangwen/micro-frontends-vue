@@ -6,6 +6,7 @@
 
 <script>
 import router from '../router.js';
+
 export default {
     data() {
         return {
@@ -14,12 +15,12 @@ export default {
     },
     computed: {
         menus() {
-            return router
+            return router;
         },
-        anchor(){
-            return this.$store.state.menu.anchor
-        }
-    }
+        anchor() {
+            return this.$store.state.menu.anchor;
+        },
+    },
 };
 </script>
 

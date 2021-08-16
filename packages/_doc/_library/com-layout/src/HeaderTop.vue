@@ -68,14 +68,14 @@ export default {
                             children: [
                                 {
                                     path: '/product-admin',
-                                    title: '后台管理'
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
+                                    title: '后台管理',
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
     },
     data() {
         return {

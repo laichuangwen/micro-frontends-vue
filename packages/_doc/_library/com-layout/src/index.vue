@@ -23,21 +23,22 @@
 <script>
 import HeaderTop from './HeaderTop.vue';
 import SideItem from './SideItem.vue';
+
 export default {
     components: {
         HeaderTop,
-        SideItem
+        SideItem,
     },
     props: {
         menus: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     data() {
         return {
         };
-    }
+    },
 };
 </script>
 

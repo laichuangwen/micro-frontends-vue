@@ -32,31 +32,31 @@
 </template>
 
 <script>
-const FormWidget = () => import('./FormWidget.vue')
+const FormWidget = () => import('./FormWidget.vue');
 
 export default {
     components: {
-        FormWidget
+        FormWidget,
     },
     props: {
         item: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         model: {
             type: Object,
-            default: () => ({})
-        }
+            default: () => ({}),
+        },
     },
     data() {
         return {
 
-        }
+        };
     },
     methods: {
 
-    }
-}
+    },
+};
 
 </script>
 

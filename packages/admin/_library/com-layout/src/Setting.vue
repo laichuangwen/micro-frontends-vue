@@ -23,25 +23,25 @@ export default {
         return {
             theme: '#11a983',
             logo: true,
-            fixedHeader: true
+            fixedHeader: true,
         };
     },
     methods: {
         changeTheme(theme) {
             this.$ctx.theme.updateTheme(theme);
-            localStorage.setItem('theme',theme)
+            localStorage.setItem('theme', theme);
         },
-        changeLogo(logo){
-            this.$store.dispatch('layout/update',{
+        changeLogo(logo) {
+            this.$store.dispatch('layout/update', {
                 key: 'logo',
-                value: logo
-            })
+                value: logo,
+            });
         },
-        changeHeader(fixedHeader){
-            this.$store.dispatch('layout/update',{
+        changeHeader(fixedHeader) {
+            this.$store.dispatch('layout/update', {
                 key: 'fixedHeader',
-                value: fixedHeader
-            })
+                value: fixedHeader,
+            });
         },
     },
 };

@@ -9,76 +9,77 @@
 </template>
 
 <script>
-import './loadCommonIcon'
+import './loadCommonIcon';
+
 export default {
     name: 'DIcon',
     props: {
         color: String,
         rotate: { // 是否旋转
             type: Boolean,
-            default: false
+            default: false,
         },
         rotateDuration: { // 旋转周期
             type: Number,
-            default: 1
+            default: 1,
         },
         pointer: { // 悬停 是否有可点击样式
             type: Boolean,
-            default: false
+            default: false,
         },
         disabled: { // 是否禁用
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
     },
     computed: {
         icon() {
-            const icon = this.$attrs.src || this.$attrs.type
+            const icon = this.$attrs.src || this.$attrs.type;
             if (typeof icon === 'object') {
-                return icon.default.id
+                return icon.default.id;
             }
             if (typeof icon === 'string') {
-                return icon.startsWith('icon-') ? icon : `icon-${icon}`
+                return icon.startsWith('icon-') ? icon : `icon-${icon}`;
             }
         },
         style() {
-            const style = {}
+            const style = {};
             if (this.color) {
-                style.color = this.color
+                style.color = this.color;
             }
             if (this.rotate && this.rotateDuration) {
-                style.animation = `${this.s.rotate} ${this.rotateDuration}s infinite linear`
+                style.animation = `${this.s.rotate} ${this.rotateDuration}s infinite linear`;
             }
             if (this.pointer) {
-                style.cursor = 'pointer'
+                style.cursor = 'pointer';
             }
             if (this.disabled) {
-                style.cursor = 'not-allowed'
+                style.cursor = 'not-allowed';
             }
-            return style
+            return style;
         },
         classes() {
-            const classes = [this.s.icon]
+            const classes = [this.s.icon];
             if (this.rotate) {
-                classes.push(this.s.rotate)
+                classes.push(this.s.rotate);
             }
-            return classes
+            return classes;
         },
         eventHandle() {
             return {
                 ...this.$listeners,
-                click: this.clickHandle // 重写click => disabled 时阻止向外传递
-            }
-        }
+                click: this.clickHandle, // 重写click => disabled 时阻止向外传递
+            };
+        },
     },
     methods: {
         clickHandle(event) {
             if (!this.disabled) {
-                this.$emit('click', event)
+                this.$emit('click', event);
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style lang="scss" insertbefore module="s">

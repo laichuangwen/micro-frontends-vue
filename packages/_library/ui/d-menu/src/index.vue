@@ -19,15 +19,16 @@
 
 <script>
 import MenuItem from './MenuItem.vue';
+
 export default {
     components: {
-        MenuItem
+        MenuItem,
     },
     props: {
         list: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     data() {
         return {
@@ -36,8 +37,8 @@ export default {
     },
     methods: {
         select(path) {
-            this.$emit('activeChange', path)
-        }
+            this.$emit('activeChange', path);
+        },
     },
 };
 </script>

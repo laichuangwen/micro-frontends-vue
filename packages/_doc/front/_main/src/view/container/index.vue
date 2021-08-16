@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import { start, runAfterFirstMounted,setDefaultMountApp } from 'qiankun';
+import { start, runAfterFirstMounted, setDefaultMountApp } from 'qiankun';
+
 export default {
     name: 'App',
     data() {
@@ -15,13 +16,13 @@ export default {
             window.qiankunStarted = true;
             // 加载
             start({
-                prefetch: true
+                prefetch: true,
             });
-            setDefaultMountApp('/guide')
+            setDefaultMountApp('/guide');
             // 加入加载
             runAfterFirstMounted(() => {
                 console.log('第一个微应用加载完成');
-                this.loading = false
+                this.loading = false;
             });
         }
     },

@@ -14,38 +14,38 @@ export default {
     props: {
         model: {
             type: Object,
-            default: () => ({})
-        }
+            default: () => ({}),
+        },
     },
     data() {
         return {
 
-        }
+        };
     },
     computed: {
         _value: {
             get() {
-                const prop = this.$attrs.prop
-                let result = []
+                const { prop } = this.$attrs;
+                let result = [];
 
                 if (this.model[prop[0]]) {
-                    result = prop.map(field => this.model[field])
+                    result = prop.map((field) => this.model[field]);
                 }
 
-                return result
+                return result;
             },
             set(value) {
-                const _value = value || []
+                const _value = value || [];
                 this.$attrs.prop.forEach((field, index) => {
-                    this.model[field] = _value[index] ?? ''
-                })
-            }
-        }
+                    this.model[field] = _value[index] ?? '';
+                });
+            },
+        },
     },
     methods: {
 
-    }
-}
+    },
+};
 
 </script>
 

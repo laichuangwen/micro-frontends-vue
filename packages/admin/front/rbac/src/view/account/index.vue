@@ -14,10 +14,10 @@ export default {
     },
     methods: {
         jump() {
-            //hyperlink.open('/vue')
-            history.pushState(null, '/bms', '/bms')
-        }
-    }
+            // hyperlink.open('/vue')
+            history.pushState(null, '/bms', '/bms');
+        },
+    },
 };
 </script>
 

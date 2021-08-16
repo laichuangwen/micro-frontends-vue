@@ -25,54 +25,55 @@
 </template>
 
 <script>
-import 'highlight.js/styles/atom-one-light.css'
+import 'highlight.js/styles/atom-one-light.css';
+
 export default {
     name: 'DemoBlock',
 
     props: {
         jsfiddle: Object,
         default() {
-            return {}
-        }
+            return {};
+        },
     },
     data() {
         return {
             hovering: false,
-            isExpanded: false
-        }
+            isExpanded: false,
+        };
     },
 
     computed: {
 
         codeArea() {
-            return this.$el.getElementsByClassName('meta')[0]
+            return this.$el.getElementsByClassName('meta')[0];
         },
 
         codeAreaHeight() {
             if (this.$el.getElementsByClassName('description').length > 0) {
-                return this.$el.getElementsByClassName('description')[0].clientHeight +
-                    this.$el.getElementsByClassName('highlight')[0].clientHeight + 20
+                return this.$el.getElementsByClassName('description')[0].clientHeight
+                    + this.$el.getElementsByClassName('highlight')[0].clientHeight + 20;
             }
-            return this.$el.getElementsByClassName('highlight')[0].clientHeight
-        }
+            return this.$el.getElementsByClassName('highlight')[0].clientHeight;
+        },
     },
 
     watch: {
         isExpanded(val) {
-            this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
-        }
+            this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0';
+        },
     },
 
     mounted() {
         this.$nextTick(() => {
-            const highlight = this.$el.getElementsByClassName('highlight')[0]
+            const highlight = this.$el.getElementsByClassName('highlight')[0];
             if (this.$el.getElementsByClassName('description').length === 0) {
-                highlight.style.width = '100%'
-                highlight.borderRight = 'none'
+                highlight.style.width = '100%';
+                highlight.borderRight = 'none';
             }
-        })
-    }
-}
+        });
+    },
+};
 </script>
 
 <style lang="scss">

@@ -15,33 +15,33 @@
 </template>
 
 <script>
-import FormItem from '../components/FormItem.vue'
+import FormItem from '../components/FormItem.vue';
 
 export default {
     components: {
-        FormItem
+        FormItem,
     },
     props: {
         model: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         formItems: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     data() {
         return {
 
-        }
+        };
     },
     mounted() {
     },
     methods: {
 
-    }
-}
+    },
+};
 
 </script>
 

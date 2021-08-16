@@ -41,13 +41,13 @@ export default {
         Setting,
         Shrink,
         SysLogo,
-        Personal
+        Personal,
     },
     props: {
         loading: {
             type: Boolean,
-            default: true
-        }
+            default: true,
+        },
     },
     data() {
         return {
@@ -60,42 +60,42 @@ export default {
             set(value) {
                 this.$store.dispatch('layout/menu/update', {
                     key: 'drawer',
-                    value
-                })
+                    value,
+                });
             },
             get() {
-                return this.menu.drawer
-            }
+                return this.menu.drawer;
+            },
         },
         layout() {
-            return this.$store.state.layout
+            return this.$store.state.layout;
         },
         menu() {
-            return this.layout.menu
+            return this.layout.menu;
         },
         view() {
-            return this.layout.view
+            return this.layout.view;
         },
         width() {
-            return this.layout.width
+            return this.layout.width;
         },
         fixedHeader() {
-            return this.layout.fixedHeader
+            return this.layout.fixedHeader;
         },
         logo() {
-            return this.layout.logo
+            return this.layout.logo;
         },
         firstSubMenu() {
-            return this.$store.state.menu.firstSubMenu
+            return this.$store.state.menu.firstSubMenu;
         },
         rootMenus() {
-            return this.$store.state.menu.rootMenus
+            return this.$store.state.menu.rootMenus;
         },
         subMenus() {
-            return this.$store.state.menu.subMenus
+            return this.$store.state.menu.subMenus;
         },
         navs() {
-            return this.$store.state.menu.navs
+            return this.$store.state.menu.navs;
         },
     },
     methods: {
@@ -103,23 +103,22 @@ export default {
             // 存宽度
             this.$store.dispatch('layout/update', {
                 key: 'width',
-                value: width
-            })
+                value: width,
+            });
             // 收缩menu
-            this.$store.dispatch('layout/menu/setCollapse', false)
+            this.$store.dispatch('layout/menu/setCollapse', false);
         },
         activeChange(url) {
             // 跳转
-            history.pushState(null, url, url)
+            history.pushState(null, url, url);
             // 当小屏点击会自动隐藏
             if (this.width < 900) {
-                this.$store.dispatch('layout/menu/setCollapse', false)
+                this.$store.dispatch('layout/menu/setCollapse', false);
             }
-        }
-    }
+        },
+    },
 };
 </script>
-
 
 <style lang="scss" module="s">
 .header {
@@ -143,4 +142,3 @@ export default {
     width: 100%;
 }
 </style>
-

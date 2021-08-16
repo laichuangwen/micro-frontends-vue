@@ -19,51 +19,51 @@
 </template>
 
 <script>
-import FormItem from '../components/FormItem.vue'
+import FormItem from '../components/FormItem.vue';
 
 export default {
     components: {
-        FormItem
+        FormItem,
     },
     props: {
         model: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         layoutConfig: {
             type: Object,
-            default: () => ({})
+            default: () => ({}),
         },
         formItems: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     data() {
         return {
 
-        }
+        };
     },
     computed: {
         _layoutConfig() {
             const Default = {
                 type: 'flex',
-                colSpan: 8
-            }
+                colSpan: 8,
+            };
             const result = {
                 ...Default,
-                ...this.layoutConfig
-            }
+                ...this.layoutConfig,
+            };
 
-            return result
-        }
+            return result;
+        },
     },
     mounted() {
     },
     methods: {
 
-    }
-}
+    },
+};
 
 </script>
 

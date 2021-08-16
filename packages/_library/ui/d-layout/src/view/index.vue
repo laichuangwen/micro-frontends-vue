@@ -41,22 +41,23 @@
 
 <script>
 import Tip from './Tip.vue';
+
 export default {
     components: {
-        Tip
+        Tip,
     },
     props: {
         drawer: {
             type: Boolean,
-            default: false
+            default: false,
         },
         fixedHeader: {
             type: Boolean,
-            default: true
+            default: true,
         },
         loading: {
             type: Boolean,
-            default: false
+            default: false,
         },
         view: {
             type: Object,
@@ -64,8 +65,8 @@ export default {
                 type: '', // enum: 空显示router-view denied显示未授权 deleted显示被删除
                 title: '', // 提示标题
                 tip: '', // 提示语
-                back: true // 是否显示
-            })
+                back: true, // 是否显示
+            }),
         },
     },
     data() {
@@ -76,29 +77,29 @@ export default {
     computed: {
         drawerShow: {
             set(value) {
-                this.$emit('update:drawer', value)
+                this.$emit('update:drawer', value);
             },
             get() {
-                return this.drawer
-            }
+                return this.drawer;
+            },
         },
     },
     beforeMount() {
-        window.addEventListener('resize', this.resizeHandler)
+        window.addEventListener('resize', this.resizeHandler);
     },
     beforeDestroy() {
-        window.removeEventListener('resize', this.resizeHandler)
+        window.removeEventListener('resize', this.resizeHandler);
     },
     mounted() {
-        this.resizeHandler()
+        this.resizeHandler();
     },
     methods: {
         resizeHandler() {
-            const resize = document.body.getBoundingClientRect()
-            this.width = resize.width
-            this.$emit('resizeChange', resize)
-        }
-    }
+            const resize = document.body.getBoundingClientRect();
+            this.width = resize.width;
+            this.$emit('resizeChange', resize);
+        },
+    },
 };
 </script>
 

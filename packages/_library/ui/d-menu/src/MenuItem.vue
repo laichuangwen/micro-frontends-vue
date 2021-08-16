@@ -1,6 +1,6 @@
 <template>
     <div v-if="item&&item.children&&item.children.length">
-        <el-submenu 
+        <el-submenu
             :key="item.path"
             :index="item.path"
             popper-append-to-body>
@@ -30,12 +30,12 @@ import ItemIcon from './ItemIcon.vue';
 export default {
     name: 'MenuItem',
     components: {
-        ItemIcon
+        ItemIcon,
     },
     props: {
         item: {
             type: Object,
-            required: true
+            required: true,
         },
     },
     data() {

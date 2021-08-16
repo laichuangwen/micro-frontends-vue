@@ -1,6 +1,6 @@
 <template>
     <div :class="s.view">
-        
+
     </div>
 </template>
 

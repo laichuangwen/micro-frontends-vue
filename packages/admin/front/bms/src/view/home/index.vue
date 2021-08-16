@@ -16,15 +16,15 @@ export default {
     },
     methods: {
         jump() {
-            //hyperlink.open('/vue')
-            history.pushState(null, '/rbac', '/rbac')
+            // hyperlink.open('/vue')
+            history.pushState(null, '/rbac', '/rbac');
         },
         store() {
             this.$ctx._mainApp.setGlobalState({
-                main: 'denied'
-            })
-        }
-    }
+                main: 'denied',
+            });
+        },
+    },
 };
 </script>
 

@@ -9,7 +9,7 @@ export default {
         };
     },
     mounted() {
-         //this.$store.dispatch('layout/view/toggle', 'denied')
+        // this.$store.dispatch('layout/view/toggle', 'denied')
     },
 };
 </script>

@@ -52,32 +52,32 @@
 export default {
     data() {
         return {
-        }
+        };
     },
     computed: {
-        user(){
-            return this.$store.state.user
+        user() {
+            return this.$store.state.user;
         },
-        info(){
-            return this.user.info
-        }
+        info() {
+            return this.user.info;
+        },
     },
     methods: {
         async onCmd(cmd) {
             switch (cmd) {
-                case 'center':
-                    history.pushState(null, '/center', '/center')
-                    //hyperlink.open('/center')
-                    break
-                case 'signOut':
-                    //  auth.signout()
-                    break
-                default:
-                    break
+            case 'center':
+                history.pushState(null, '/center', '/center');
+                // hyperlink.open('/center')
+                break;
+            case 'signOut':
+                //  auth.signout()
+                break;
+            default:
+                break;
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style lang="scss" module="s">

@@ -28,37 +28,37 @@ export default {
     props: {
         type: {
             type: String,
-            defalut: ''
+            defalut: '',
         },
         item: {
             type: Object,
-            required: true
+            required: true,
         },
     },
     computed: {
         anchor() {
-            return this.$store.state.menu.anchor
+            return this.$store.state.menu.anchor;
         },
         hashActive() {
             if (this.type === 'anchor') {
-                return this.$route.hash === `#${this.item.name}`
+                return this.$route.hash === `#${this.item.name}`;
             }
-            return false
+            return false;
         },
         active() {
-            return this.$route.name === this.item.name
+            return this.$route.name === this.item.name;
         },
         icon() {
             if (this.item.meta && this.item.meta.icon) {
-                return this.item.meta.icon
+                return this.item.meta.icon;
             }
-            return ''
+            return '';
         },
         title() {
             if (this.item.meta && this.item.meta.title) {
-                return this.item.meta.title
+                return this.item.meta.title;
             }
-            return title
+            return '';
         },
 
     },
@@ -69,15 +69,15 @@ export default {
     methods: {
         to({ name }) {
             if (this.$route.name === name) {
-                return
+                return;
             }
             if (this.type === 'anchor') {
-                const url = `/${this.$route.name.replaceAll('.', '/')}#${name}`
-                history.pushState(null, url, url)
-                return
+                const url = `/${this.$route.name.replaceAll('.', '/')}#${name}`;
+                history.pushState(null, url, url);
+                return;
             }
-            this.$router.push({ name })
-        }
+            this.$router.push({ name });
+        },
     },
 };
 </script>

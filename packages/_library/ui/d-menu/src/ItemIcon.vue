@@ -11,13 +11,11 @@ export default {
     props: {
         icon: {
             type: String,
-            default: ''
-        }
-    }
+            default: '',
+        },
+    },
 };
 </script>
-
-
 
 <style lang="scss" module="s">
 .icon {

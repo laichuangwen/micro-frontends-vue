@@ -19,40 +19,41 @@
 <script>
 import defaultImg from '../image/default.png';
 import deletedImg from '../image/deleted.png';
-import deniedImg from '../image/denied.png'
+import deniedImg from '../image/denied.png';
 import disabledImg from '../image/disabled.png';
+
 const imgs = {
     default: defaultImg,
     deleted: deletedImg,
     denied: deniedImg,
     disabled: disabledImg,
-}
+};
 export default {
     props: {
         type: {
-            type: String
+            type: String,
         },
         title: {
-            type: String
+            type: String,
         },
         tip: {
-            type: String
+            type: String,
         },
         back: {
-            type: Boolean
-        }
+            type: Boolean,
+        },
     },
     data() {
         return {
-            img: imgs[this.type]
-        }
+            img: imgs[this.type],
+        };
     },
     methods: {
         returnBack() {
-            this.$router.go(-1)
-        }
-    }
-}
+            this.$router.go(-1);
+        },
+    },
+};
 </script>
 
 <style lang="scss" module="s">
