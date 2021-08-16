@@ -14,12 +14,8 @@
 export default {
     data() {
         return {
+            name: 'ddd',
         };
-    },
-    methods: {
-        jump(name) {
-
-        },
     },
 };
 </script>
