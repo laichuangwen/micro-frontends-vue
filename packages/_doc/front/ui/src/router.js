@@ -17,6 +17,22 @@ export default [
                 },
 
             },
+            {
+                name: 'ui.icon',
+                path: 'icon',
+                component: () => import('./view/icon/index.md'),
+                meta: {
+                    title: '图标',
+                },
+            },
+            {
+                name: 'ui.select-smart',
+                path: 'select-smart',
+                component: () => import('./view/select-smart/index.md'),
+                meta: {
+                    title: 'Select 智能选择器',
+                },
+            },
         ],
     },
 ];

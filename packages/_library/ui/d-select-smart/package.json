@@ -1,0 +1,9 @@
+{
+    "name": "@support/d-select-smart",
+    "version": "0.0.1",
+    "description": "智能选项组",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {}
+}

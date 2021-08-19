@@ -21,6 +21,7 @@ async function render(props = {}) {
         .use(app.getAllTask())
         .start();
 }
+
 if (!window.__POWERED_BY_QIANKUN__) {
     render();
 }

@@ -1,4 +1,5 @@
 /* eslint-disable */
+const {resolve} = require('path')
 const md = require('markdown-it')();
 const { escapeHtml } = require('markdown-it/lib/common/utils');
 const { slugify } = require('transliteration');
@@ -45,7 +46,7 @@ const defaultRender = (tokens, idx, options, env, slf) => {
 };
 
 module.exports = {
-    loader: '@support/vue-markdown-loader/lib/markdown-compiler',
+    loader: resolve(__dirname,'./markdown-compiler.js'),
     options: {
         raw: true,
         use: [

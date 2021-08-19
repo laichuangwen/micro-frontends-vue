@@ -11,6 +11,7 @@
     "build": "node ci/build"
   },
   "dependencies": {
+    "@support/d-select-smart": "0.0.1",
     "@support/front-create-app": "0.0.1",
     "@support/front-launch": "0.0.1",
     "@admin/front-app": "0.0.1"

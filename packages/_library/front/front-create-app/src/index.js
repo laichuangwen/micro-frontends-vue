@@ -101,6 +101,12 @@ class App {
         if (loading) {
             document.body.removeChild(loading);
         }
+        if (process.env.NODE_ENV === 'development') {
+            // vue-devtools  加入此处代码即可
+            const instanceDiv = document.createElement('div');
+            instanceDiv.__vue__ = instance;
+            document.body.appendChild(instanceDiv);
+        }
         return instance;
     }
 }
