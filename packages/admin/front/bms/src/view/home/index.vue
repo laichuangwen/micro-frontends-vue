@@ -3,7 +3,7 @@
     home333333333444正式
     <el-button type="primary" @click="jump">跳转</el-button>
     <el-button type="primary" @click="store">设置主应用store</el-button>
-    <DGroupSmart ref="sel" v-model="value" @change="change" :defaultProps="defaultProps" :ajax="ajax"  multiple  name="el-select" clearable>
+    <DGroupSmart ref="sel" v-model="value" @change="change" :defaultProps="defaultProps" :ajax="ajax"    name="el-select" clearable>
       <!-- <template #prefix>
         <span>按钮</span>
       </template>
@@ -11,29 +11,22 @@
         <span>按钮</span>
       </template> -->
     </DGroupSmart>
-    <!-- <el-select v-model="value" :loading="loading" multiple name="el-select" clearable>
-      <template #prefix>
-        <span>按钮</span>
-      </template>
-       <template #empty>
-        <span>按钮</span>
-      </template>
-      <el-option v-for="(item, index) in list" v-bind="item" :key="index">
-      </el-option>
-    </el-select> -->
+    <DRadioSmart v-model="value" :interceptors="interceptors" :defaultProps="defaultProps" :ajax="ajax"  ></DRadioSmart>
   </div>
 </template>
 
 <script>
 import DGroupSmart from '@support/d-select-smart';
+import DRadioSmart from '@support/d-radio-smart';
 
 export default {
     components: {
         DGroupSmart,
+        DRadioSmart,
     },
     data() {
         return {
-            value: ['35818', '355'],
+            value: '355',
             loading: true,
             ajax: {
                 url: 'https://yapi.142vip.cn/mock/1077/country/all',
@@ -41,6 +34,15 @@ export default {
             defaultProps: {
                 label: 'cnName',
                 value: 'callingCode',
+            },
+            interceptors: {
+                then: (res) => {
+                    console.log(res);
+                    return res.map((item) => ({
+                        ...item,
+                        border: true,
+                    }));
+                },
             },
             list: [
                 {
