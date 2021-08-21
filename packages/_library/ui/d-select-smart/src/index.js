@@ -1,3 +1,3 @@
-import GroupSmart from './index.vue';
+import component from './index.vue';
 
-export default GroupSmart;
+export default component;

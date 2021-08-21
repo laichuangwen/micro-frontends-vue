@@ -15,7 +15,13 @@ export default {
         },
     },
     data() {
-        return {};
+        return {
+            _model: {},
+        };
+    },
+    mounted() {
+        // 用于重置，时间范围选择组件时重置不了endTime
+        this._model = { ...this.model };
     },
     methods: {
         // 处理v-modelv value 值
@@ -53,7 +59,6 @@ export default {
             }
         },
         validate(...props) {
-            console.log('校验', this.$refs.form);
             return this.$refs.form.validate(...props);
         },
         // 对部分字段进行校验
@@ -62,6 +67,7 @@ export default {
         },
         // 对整个表单进行重置
         resetFields() {
+            Object.assign(this.model, this._model);
             this.$refs.form.resetFields();
         },
         // 移除表单项的校验结果

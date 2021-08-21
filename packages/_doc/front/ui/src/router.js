@@ -57,6 +57,14 @@ export default [
                     title: 'FormSmart 智能表单',
                 },
             },
+            {
+                name: 'ui.search-wrap',
+                path: 'search-wrap',
+                component: () => import('./view/search-wrap/index.md'),
+                meta: {
+                    title: 'SearchWrap 列表搜索包裹',
+                },
+            },
         ],
     },
 ];

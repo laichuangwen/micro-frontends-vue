@@ -10,9 +10,9 @@ export const InitMicroStore = async ({ Vue }, option) => {
     Vue.$ctx._mainApp = _mainApp;
     if (_mainApp.onGlobalStateChange) {
         // 第二个参数要true
-        _mainApp.onGlobalStateChange((state, prev) => {
+        _mainApp.onGlobalStateChange(() => {
             // 微应用回调
-            console.log(state, prev);
+            // console.log(state, prev);
         }, true);
     }
 };

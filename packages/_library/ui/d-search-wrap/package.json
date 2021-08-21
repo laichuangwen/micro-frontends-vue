@@ -1,0 +1,9 @@
+{
+    "name": "@support/d-search-wrap",
+    "version": "0.0.1",
+    "description": "列表搜索包裹",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {}
+}

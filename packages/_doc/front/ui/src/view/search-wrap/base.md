@@ -1,29 +1,20 @@
 ## 基本用法
 
-:::demo 直接使用`formItems`属性来配置表单
+:::demo 直接使用`d-form-smart`属性来配置搜索条件,展开收缩会根据高度自动判断
 
 ```html
 <template>
   <div>
-    <d-form-smart
-      ref="form"
-      :model="form"
-      label-width="150px"
-      label-position="left"
-      :form-Items="formItems"
-    >
-      <template #slotErrorName>
-        <span>按钮</span>
-      </template>
-      <template #region-label>
-        <el-badge :value="12" class="item">
-          <span>自定义label</span>
-        </el-badge>
-      </template>
-      <template #btn>
-        <el-button type="primary" @click="submit">提交</el-button>
-      </template>
-    </d-form-smart>
+    <d-search-wrap @search="submit" @reset="reset">
+      <d-form-smart
+        ref="form"
+        :model="form"
+        label-width="150px"
+        label-position="left"
+        :form-Items="formItems"
+      >
+      </d-form-smart>
+    </d-search-wrap>
   </div>
 </template>
 <script>
@@ -33,30 +24,12 @@
         form: {
           name: '',
           region: '',
-          date: [],
-          delivery: false,
-          personnel: '',
-          radio: '',
-          checkbox: [],
           cascader: [],
           timeSelect: '',
           datePicker: '',
           startTime: '',
           endTime: '',
-          rate: 0,
           special: '',
-          desc: null,
-        },
-        rules: {
-          name: [
-            { required: true, message: '请输入活动名称', trigger: 'blur' },
-            {
-              min: 3,
-              max: 5,
-              message: '长度在 3 到 5 个字符',
-              trigger: 'blur',
-            },
-          ],
         },
         formItems: [
           {
@@ -68,57 +41,10 @@
             },
           },
           {
-            label: '开关',
-            prop: 'delivery',
-            type: 'el-switch',
-          },
-          {
-            prop: 'region',
-            type: 'd-select-smart',
-            slotLabelName: 'region-label',
-            props: {
-              list: [],
-            },
-          },
-          {
             label: '智能select',
             prop: 'special',
             type: 'd-select-smart',
             props: {
-              ajax: {
-                url: 'https://yapi.142vip.cn/mock/1077/country/all',
-              },
-              defaultProps: {
-                label: 'cnName',
-                value: 'callingCode',
-              },
-            },
-          },
-          {
-            label: '智能radio',
-            prop: 'radio',
-            type: 'd-radio-smart',
-            props: {
-              style: {
-                width: '600px',
-              },
-              ajax: {
-                url: 'https://yapi.142vip.cn/mock/1077/country/all',
-              },
-              defaultProps: {
-                label: 'cnName',
-                value: 'callingCode',
-              },
-            },
-          },
-          {
-            label: '智能checkbox',
-            prop: 'checkbox',
-            type: 'd-checkbox-smart',
-            props: {
-              style: {
-                width: '600px',
-              },
               ajax: {
                 url: 'https://yapi.142vip.cn/mock/1077/country/all',
               },
@@ -194,37 +120,16 @@
               valueFormat: 'yyyy-MM-dd',
             },
           },
-          {
-            label: '评分',
-            prop: 'rate',
-            type: 'el-rate',
-          },
-          {
-            label: '备注',
-            prop: 'desc',
-            type: 'el-input',
-            props: {
-              placeholder: '请输入内容',
-              type: 'textarea',
-              style: {
-                width: '400px',
-              },
-            },
-          },
-          {
-            slotName: 'btn',
-            props: {},
-          },
         ],
       };
     },
     methods: {
-      change(val) {
-        console.log('change', val);
+      reset() {
+        this.$refs.form.resetFields()
       },
-      submit(){
-           console.log(this.form);
-      }
+      submit() {
+        console.log(this.form);
+      },
     },
   };
 </script>

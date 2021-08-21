@@ -1,9 +1,16 @@
 <template>
   <div :class="s.view">
-    home333333333444正式
     <el-button type="primary" @click="jump">跳转</el-button>
     <el-button type="primary" @click="store">设置主应用store</el-button>
-    <DGroupSmart ref="sel" v-model="value" @change="change" :defaultProps="defaultProps" :ajax="ajax"    name="el-select" clearable>
+    <DGroupSmart
+      ref="sel"
+      v-model="value"
+      @change="change"
+      :defaultProps="defaultProps"
+      :ajax="ajax"
+      name="el-select"
+      clearable
+    >
       <!-- <template #prefix>
         <span>按钮</span>
       </template>
@@ -11,7 +18,12 @@
         <span>按钮</span>
       </template> -->
     </DGroupSmart>
-    <DRadioSmart v-model="value" :interceptors="interceptors" :defaultProps="defaultProps" :ajax="ajax"  ></DRadioSmart>
+    <DRadioSmart
+      v-model="value"
+      :interceptors="interceptors"
+      :defaultProps="defaultProps"
+      :ajax="ajax"
+    ></DRadioSmart>
   </div>
 </template>
 
