@@ -13,6 +13,7 @@
 		"@support/d-select-smart": "0.0.1",
 		"@support/d-radio-smart": "0.0.1",
         "@support/d-checkbox-smart": "0.0.1",
+        "@support/d-form-smart": "0.0.1",
 		"@support/front-api": "0.0.1",
 		"@support/front-env": "0.0.1",
 		"@support/front-reset-css": "0.0.1",

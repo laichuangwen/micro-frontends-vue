@@ -1,4 +1,4 @@
-> 基于el-radio拓展的智能Radio选择器
+> 基于el-checkbox拓展的智能CheckboxSmart多选框组
 
 <script>
 import BaseUse from './base.md'

@@ -42,7 +42,7 @@ import FormItem from 'element-ui/lib/form-item';
 import Slider from 'element-ui/lib/slider';
 import Upload from 'element-ui/lib/upload';
 import Rate from 'element-ui/lib/rate';
-import Cascader from 'element-ui/lib/calendar';
+import Cascader from 'element-ui/lib/cascader';
 import Transfer from 'element-ui/lib/transfer';
 import ColorPicker from 'element-ui/lib/color-picker';
 import DatePicker from 'element-ui/lib/date-picker';
@@ -162,6 +162,7 @@ export default {
             Vue.component(el.name, el);
         });
         Vue.use(Loading.directive);
+        Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
         Vue.prototype.$loading = Loading.service;
         Vue.prototype.$msgbox = MessageBox;
         Vue.prototype.$alert = MessageBox.alert;

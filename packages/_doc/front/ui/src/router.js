@@ -49,6 +49,14 @@ export default [
                     title: 'CheckboxSmart 智能多选框组',
                 },
             },
+            {
+                name: 'ui.form-smart',
+                path: 'form-smart',
+                component: () => import('./view/form-smart/index.md'),
+                meta: {
+                    title: 'FormSmart 智能表单',
+                },
+            },
         ],
     },
 ];

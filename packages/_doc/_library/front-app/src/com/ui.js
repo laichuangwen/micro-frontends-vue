@@ -2,6 +2,7 @@ import DIcon from '@support/d-icon';
 import DSelectSmart from '@support/d-select-smart';
 import DRadioSmart from '@support/d-radio-smart';
 import DCheckboxSmart from '@support/d-checkbox-smart';
+import DFormSmart from '@support/d-form-smart';
 
 export default {
     async install(Vue) {
@@ -9,5 +10,6 @@ export default {
         Vue.component('DSelectSmart', DSelectSmart);
         Vue.component('DRadioSmart', DRadioSmart);
         Vue.component('DCheckboxSmart', DCheckboxSmart);
+        Vue.component('DFormSmart', DFormSmart);
     },
 };

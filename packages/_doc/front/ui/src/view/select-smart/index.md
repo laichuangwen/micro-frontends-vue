@@ -1,4 +1,4 @@
-> 基于el-select智能select选择器
+> 基于el-select智能SelectSmart选择器
 
 <script>
 import BaseUse from './base.md'

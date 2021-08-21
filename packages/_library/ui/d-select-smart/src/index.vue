@@ -145,6 +145,7 @@ export default {
             {
                 ref: 'select',
                 props: {
+                    clearable: true,
                     ...this.$attrs,
                     loading: this.loading,
                     value: this.value,

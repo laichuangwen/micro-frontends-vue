@@ -1,4 +1,4 @@
-> 基于el-radio拓展的智能Radio选择器
+> 基于el-radio拓展的智能RadioSmart选择器
 
 <script>
 import BaseUse from './base.md'

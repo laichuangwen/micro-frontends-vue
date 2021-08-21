@@ -33,42 +33,42 @@
       return {
         value: [],
         ajax: {
-          url: "https://yapi.142vip.cn/mock/1077/country/all",
+          url: 'https://yapi.142vip.cn/mock/1077/country/all',
         },
         defaultProps: {
-          label: "cnName",
-          value: "callingCode",
+          label: 'cnName',
+          value: 'callingCode',
         },
         list: [
           {
-            label: "前端",
-            value: "web",
+            label: '前端',
+            value: 'web',
             disabled: true,
           },
           {
-            label: "后端服务",
-            value: "server",
+            label: '后端服务',
+            value: 'server',
           },
           {
-            label: "美工",
-            value: "ui",
+            label: '美工',
+            value: 'ui',
           },
         ],
         list1: [
           {
-            label: "前端",
-            value: "web",
+            label: '前端',
+            value: 'web',
             border: true,
             disabled: true,
           },
           {
-            label: "后端服务",
-            value: "server",
+            label: '后端服务',
+            value: 'server',
             border: true,
           },
           {
-            label: "美工",
-            value: "ui",
+            label: '美工',
+            value: 'ui',
             border: true,
           },
         ],
@@ -76,7 +76,7 @@
     },
     methods: {
       change(val) {
-        console.log("change", val);
+        console.log('change', val);
       },
     },
   };

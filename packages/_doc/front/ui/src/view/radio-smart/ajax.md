@@ -21,17 +21,17 @@
       return {
         value: '',
         ajax: {
-          url: "https://yapi.142vip.cn/mock/1077/country/all",
+          url: 'https://yapi.142vip.cn/mock/1077/country/all',
         },
         defaultProps: {
-          label: "cnName",
-          value: "callingCode",
+          label: 'cnName',
+          value: 'callingCode',
         },
       };
     },
     methods: {
       change(val) {
-        console.log("change", val);
+        console.log('change', val);
       },
     },
   };

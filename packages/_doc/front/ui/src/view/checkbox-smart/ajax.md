@@ -21,27 +21,27 @@
       return {
         value: [],
         ajax: {
-          url: "https://yapi.142vip.cn/mock/1077/country/all",
+          url: 'https://yapi.142vip.cn/mock/1077/country/all',
         },
         defaultProps: {
-          label: "cnName",
-          value: "callingCode",
+          label: 'cnName',
+          value: 'callingCode',
         },
-          interceptors: {
-                then: (res) => {
-                    console.log(res);
-                    return res.map((item) => ({
-                        ...item,
-                        border: true,
-                        size: 'mini',
-                    }));
-                },
-            },
+        interceptors: {
+          then: (res) => {
+            console.log(res);
+            return res.map((item) => ({
+              ...item,
+              border: true,
+              size: 'mini',
+            }));
+          },
+        },
       };
     },
     methods: {
       change(val) {
-        console.log("change", val);
+        console.log('change', val);
       },
     },
   };
