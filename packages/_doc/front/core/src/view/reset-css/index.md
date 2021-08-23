@@ -230,3 +230,75 @@ body {
     box-sizing: border-box;
 }
 ```
+
+## el-elment 额外样式
+``` scss
+
+// dialog
+.custom-dialog {
+    border-radius: 4px;
+
+    .el-dialog__footer {
+        padding: 12px 18px;
+    }
+
+    .el-dialog__header {
+        padding: 14px 16px;
+    }
+
+    .el-dialog__title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .el-dialog__close {
+        font-size: 24px;
+    }
+
+    .el-dialog__headerbtn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .el-dialog__body {
+        border-bottom: 1px solid #e9eaec;
+        border-top: 1px solid #e9eaec;
+    }
+}
+
+// message-box 
+.custom-message-box {
+    padding-bottom: 0px;
+
+    .el-message-box__header {
+        padding: 14px 16px;
+    }
+
+    .el-message-box__content {
+        border-bottom: 1px solid #e9eaec;
+        border-top: 1px solid #e9eaec;
+        padding: 32px;
+    }
+
+    .el-message-box__btns {
+        padding: 12px 18px;
+    }
+
+    .el-message-box__title {
+        font-weight: bold;
+        font-size: 16px;
+        color: $color-title;
+    }
+
+    .el-message-box__headerbtn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+
+    .el-message-box__close {
+        font-size: 24px;
+    }
+}
+```

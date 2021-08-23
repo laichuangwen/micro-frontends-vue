@@ -4,6 +4,7 @@ import DRadioSmart from '@support/d-radio-smart';
 import DCheckboxSmart from '@support/d-checkbox-smart';
 import DFormSmart from '@support/d-form-smart';
 import DSearchWrap from '@support/d-search-wrap';
+import DTableCustom from '@support/d-table-custom';
 
 export default {
     async install(Vue) {
@@ -13,5 +14,6 @@ export default {
         Vue.component('DCheckboxSmart', DCheckboxSmart);
         Vue.component('DFormSmart', DFormSmart);
         Vue.component('DSearchWrap', DSearchWrap);
+        Vue.component('DTableCustom', DTableCustom);
     },
 };

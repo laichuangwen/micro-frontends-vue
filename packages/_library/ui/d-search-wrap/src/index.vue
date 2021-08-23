@@ -1,22 +1,19 @@
 <template>
-  <div :class="{ [s.view]: true, [s.fold]: fold }">
-    <div ref="options">
-      <slot></slot>
+  <div @keyup.tab="handlerTab" :class="{ [s.view]: true, [s.fold]: fold }">
+    <div  :class="s.options">
+      <div ref="options">
+        <slot></slot>
+      </div>
     </div>
     <div :class="s.right">
-      <div>
-        <slot name="btns"></slot>
-      </div>
-      <div :class="s.wrap">
-        <el-button type="primary" @click="search">查询</el-button>
-        <el-button @click="reset">重置</el-button>
-        <div v-if="needMore" :class="s.more" @click="more">
-          <span>{{ !fold ? '展开' : '收起' }}</span>
-          <i
-            class="el-icon-d-arrow-left"
-            :class="{ [s.icon]: true, [s.isFold]: !fold }"
-          ></i>
-        </div>
+      <el-button type="primary" @click="search">查询</el-button>
+      <el-button @click="reset">重置</el-button>
+      <div v-if="needMore" :class="s.more" @click="more">
+        <span>{{ !fold ? '展开' : '收起' }}</span>
+        <i
+          class="el-icon-d-arrow-left"
+          :class="{ [s.icon]: true, [s.isFold]: !fold }"
+        ></i>
       </div>
     </div>
   </div>
@@ -29,7 +26,6 @@ export default {
         return {
             needMore: false,
             fold: false,
-            inited: false,
         };
     },
     mounted() {
@@ -42,11 +38,13 @@ export default {
     methods: {
         init() {
             const rect = this.$refs.options.getBoundingClientRect();
-            const oversize = rect.height > 51;
+            const oversize = rect.height > 48;
             this.needMore = oversize;
-            if (!this.inited && oversize) {
-                this.inited = true;
-                this.fold = !oversize;
+        },
+        handlerTab() {
+            // tab 切换时
+            if (this.needMore) {
+                this.fold = true;
             }
         },
         more() {
@@ -63,34 +61,60 @@ export default {
 </script>
 
 <style lang="scss" module="s">
-$height: 51px;
+$height: 48px;
 
 .view {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 16px;
-  height: $height;
-  overflow: hidden;
   &.fold {
-    flex-direction: column;
-    height: auto;
-    overflow: auto;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    .options {
+      height: auto;
+      overflow: auto;
+      padding-right: 0;
+      position: relative;
+    }
     .right {
-      width: 100%;
-      justify-content: space-between;
-      margin-bottom: 16px;
+      position: absolute;
+      right: 0;
+      top: auto;
+      bottom: 0px;
     }
   }
 }
+
+.options {
+  height: $height;
+  overflow: hidden;
+  padding-right: 180px;
+}
 .right {
+  width: 180px;
+  height: 32px;
   display: flex;
-  flex-direction: row;
-  .wrap {
-    margin-left: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: auto;
+}
+@media (max-width: 600px) {
+  .view {
+    padding-bottom: 32px;
+  }
+  .options {
+    padding-right: 0;
+  }
+  .right {
+    position: absolute;
+    right: 0;
+    top: auto;
+    bottom: 0;
   }
 }
 
@@ -108,7 +132,6 @@ $height: 51px;
       transform: rotate(-90deg);
     }
   }
-
   &:hover {
     opacity: 0.8;
     .icon {

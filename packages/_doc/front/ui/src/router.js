@@ -65,6 +65,22 @@ export default [
                     title: 'SearchWrap 列表搜索包裹',
                 },
             },
+            {
+                name: 'ui.table-custom',
+                path: 'table-custom',
+                component: () => import('./view/table-custom/index.md'),
+                meta: {
+                    title: 'TableCustom 自定义表头',
+                },
+            },
+            {
+                name: 'ui.table-tool',
+                path: 'table-tool',
+                component: () => import('./view/table-tool/index.md'),
+                meta: {
+                    title: 'TableTool 表格工具',
+                },
+            },
         ],
     },
 ];

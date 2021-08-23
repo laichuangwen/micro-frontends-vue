@@ -1,0 +1,11 @@
+{
+    "name": "@support/d-table-tool",
+    "version": "0.0.1",
+    "description": "表格工具",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

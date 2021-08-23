@@ -1,0 +1,12 @@
+{
+    "name": "@support/d-table-custom",
+    "version": "0.0.1",
+    "description": "表头配置",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+        "vuedraggable": "2.19.2"
+    },
+    "devDependencies": {
+    }
+}

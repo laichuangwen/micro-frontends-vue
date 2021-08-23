@@ -1,30 +1,40 @@
 <template>
-  <div>
+  <div :class="s.view">
     <d-search-wrap @search="submit" @reset="reset">
-      <d-form-smart
+      <DFormSmart
         ref="form"
         inline
-        :model="form"
+        :model="query"
         label-width="100px"
         label-position="right"
         :form-items="formItems"
       >
-      </d-form-smart>
+      </DFormSmart>
       <template #btns>
-        <el-button type="primary">新增</el-button>
+        <el-button type="primary" @click="add">新增</el-button>
       </template>
     </d-search-wrap>
-    <el-button type="primary" v-if="$p('bms.guide')">有权限</el-button>
+    <div :class="s.tableCustom">
+      <el-button @click="toCustom">自定义表头</el-button>
+      <d-table-custom
+        ref="custom"
+        :columns="columns"
+        @save="save"
+      ></d-table-custom>
+    </div>
+
+    <el-button style="width: 100%">dddd</el-button>
   </div>
 </template>
 
 <script>
+import config from './config';
 
 export default {
-
     data() {
         return {
-            form: {
+            dialogVisible: true,
+            query: {
                 name: '',
                 region: '',
                 date: [],
@@ -41,6 +51,21 @@ export default {
                 special: '',
                 desc: null,
             },
+            formAdd: {
+                name: '',
+                age: '',
+                sex: '',
+            },
+            formItems1: [
+                {
+                    label: '名字',
+                    prop: 'name',
+                    type: 'el-input',
+                    props: {
+                        placeholder: '请输入内容',
+                    },
+                },
+            ],
             formItems: [
                 {
                     label: '名字',
@@ -131,6 +156,22 @@ export default {
                     },
                 },
             ],
+            columns: [
+                {
+                    label: '姓名',
+                    required: true,
+                },
+                {
+                    label: '年龄',
+                },
+                {
+                    label: '性别',
+                },
+                {
+                    label: '身高',
+                },
+            ],
+            selected: [],
         };
     },
     methods: {
@@ -140,8 +181,60 @@ export default {
         submit() {
             console.log(this.form);
         },
+        toCustom() {
+            this.$refs.custom.open(this.selected);
+        },
+        save(columns) {
+            this.selected = columns;
+        },
+        async add() {
+            this.$msgbox({
+                customClass: 'custom-message-box',
+                title: '新增',
+                message: this.$createElement('DFormSmart', {
+                    ref: 'formAdd',
+                    key: Math.random(), // 重新创建，不缓存
+                    attrs: {
+                        rules: config.rules,
+                        labelWidth: '100px',
+                        labelPosition: 'right',
+                    },
+                    props: {
+                        model: this.formAdd,
+                        formItems: config.formItems,
+                    },
+                }),
+                showCancelButton: true,
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                beforeClose: async (action, instance, done) => {
+                    if (action === 'confirm') {
+                        await this.$refs.formAdd.validate();
+                        instance.confirmButtonLoading = true;
+                        console.log(this.formAdd);
+                        setTimeout(() => {
+                            this.$refs.formAdd.resetFields();
+                            done();
+                            setTimeout(() => {
+                                instance.confirmButtonLoading = false;
+                            }, 300);
+                        }, 3000);
+                    } else {
+                        this.$refs.formAdd.resetFields();
+                        done();
+                    }
+                },
+            });
+        },
     },
 };
 </script>
 
-<style lang="scss" module="s"></style>
+<style lang="scss" module="s">
+.view {
+  position: relative;
+}
+.tableCustom{
+    position: relative;
+}
+</style>
