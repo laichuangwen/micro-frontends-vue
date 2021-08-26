@@ -1,7 +1,7 @@
 <template>
-    <com-layout :loading="loading">
-        <div id="app-container"></div>
-    </com-layout>
+  <com-layout :loading="loading">
+    <div id="app-container"></div>
+  </com-layout>
 </template>
 
 <script>
@@ -23,10 +23,15 @@ export default {
             const { onGlobalStateChange } = initGlobalState({
                 permission,
                 main: '',
+                mainFullscreen: false,
                 navs: [],
             });
-            onGlobalStateChange(({ main, navs }) => {
+            onGlobalStateChange(({ main, navs, mainFullscreen }) => {
                 this.$store.dispatch('layout/view/toggle', main);
+                this.$store.dispatch('layout/update', {
+                    key: 'mainFullscreen',
+                    value: mainFullscreen,
+                });
                 this.$store.dispatch('menu/setNavs', navs);
             });
             start({
@@ -42,5 +47,4 @@ export default {
 };
 </script>
 
-<style lang="scss" module="s">
-</style>
+<style lang="scss" module="s"></style>

@@ -1,0 +1,11 @@
+{
+    "name": "@support/d-table-smart",
+    "version": "0.0.1",
+    "description": "智能表格",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

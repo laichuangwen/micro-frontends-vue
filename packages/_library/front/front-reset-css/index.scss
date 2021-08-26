@@ -226,3 +226,14 @@ body {
         font-size: 24px;
     }
 }
+
+.custom-table-header {
+    color: $color-title;
+    th {
+        background: #f8f8f9;
+        font-weight: 800 !important;
+    }
+    .cell {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "@support/d-table-plus",
+    "version": "0.0.1",
+    "description": "表格拓展",
+    "main": "./src/index.js",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

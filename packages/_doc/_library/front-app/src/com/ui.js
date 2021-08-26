@@ -6,6 +6,7 @@ import DFormSmart from '@support/d-form-smart';
 import DSearchWrap from '@support/d-search-wrap';
 import DTableCustom from '@support/d-table-custom';
 import DTableTool from '@support/d-table-tool';
+import DTablePlus from '@support/d-table-plus';
 
 export default {
     async install(Vue) {
@@ -17,5 +18,6 @@ export default {
         Vue.component('DSearchWrap', DSearchWrap);
         Vue.component('DTableCustom', DTableCustom);
         Vue.component('DTableTool', DTableTool);
+        Vue.component('DTablePlus', DTablePlus);
     },
 };

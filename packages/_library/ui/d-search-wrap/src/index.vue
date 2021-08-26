@@ -68,9 +68,9 @@ $height: 48px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   &.fold {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     padding-bottom: 32px;
     .options {
       height: auto;

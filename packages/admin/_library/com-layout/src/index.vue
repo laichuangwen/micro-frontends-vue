@@ -3,6 +3,7 @@
         :view="view"
         :loading="loading"
         :fixedHeader="fixedHeader"
+        :mainFullscreen="mainFullscreen"
         @resizeChange="resizeChange">
         <template #aside>
             <sys-logo v-if="logo"
@@ -81,6 +82,9 @@ export default {
         },
         fixedHeader() {
             return this.layout.fixedHeader;
+        },
+        mainFullscreen() {
+            return this.layout.mainFullscreen;
         },
         logo() {
             return this.layout.logo;

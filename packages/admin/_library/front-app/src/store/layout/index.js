@@ -10,6 +10,7 @@ export default {
     state: {
         logo: true,
         fixedHeader: true,
+        mainFullscreen: false,
         width: '',
     },
     mutations: {

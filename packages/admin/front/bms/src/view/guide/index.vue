@@ -14,16 +14,32 @@
         <el-button type="primary" @click="add">新增</el-button>
       </template>
     </d-search-wrap>
-    <div :class="s.tableCustom">
+    <!-- <div :class="s.tableCustom">
       <el-button @click="toCustom">自定义表头</el-button>
-      <d-table-custom
-        ref="custom"
-        :columns="columns"
-        @save="save"
-      ></d-table-custom>
-    </div>
+    </div> -->
+    <DTableSmart header-row-class-name="custom-table" :columns="columns" :data="tableData" border>
+      <template #custom>
+        <d-table-custom
+          ref="custom"
+          :columns="columns"
+          @save="save"
+        ></d-table-custom>
+      </template>
+      <template #topbarLeft>
+        <el-button type="primary" @click="add">新增</el-button>
+      </template>
+      <template #topbarTool>
+        <d-table-tool :events="events"></d-table-tool>
+      </template>
+      <template #handler="{ row }">
+        <el-button type="text" size="small" @click="handlerAdd(row)"
+          >新增</el-button
+        >
+        <el-button type="text" size="small">编辑</el-button>
+      </template>
+    </DTableSmart>
 
-    <el-button style="width: 100%">dddd</el-button>
+    <!-- <el-button style="width: 100%">dddd</el-button> -->
   </div>
 </template>
 
@@ -56,6 +72,16 @@ export default {
                 age: '',
                 sex: '',
             },
+            events: [
+                {
+                    title: '自定义表头',
+                    icon: 'table-custom',
+                    event: () => {
+                        console.log('dd');
+                        this.$refs.custom.open(this.selected);
+                    },
+                },
+            ],
             formItems1: [
                 {
                     label: '名字',
@@ -158,20 +184,89 @@ export default {
             ],
             columns: [
                 {
-                    label: '姓名',
+                    type: 'selection',
+                    width: '55',
+                },
+                {
+                    type: 'index',
+                    label: '排序',
+                    width: '55',
+                    align: 'center',
+                },
+                {
+                    label: '日期',
+                    prop: 'date',
+                    width: '400px',
                     required: true,
+                    align: 'center',
                 },
                 {
-                    label: '年龄',
+                    label: '姓名',
+                    width: '100px',
+                    prop: 'name',
+                    required: true,
+                    align: 'center',
+                    formatter: (row) => `${row.name}1111`,
                 },
                 {
-                    label: '性别',
+                    label: '省份',
+                    width: '700px',
+                    prop: 'province',
                 },
                 {
-                    label: '身高',
+                    label: '市区',
+                    prop: 'city',
+                    width: '700px',
+                },
+                {
+                    label: '地址',
+                    width: '500px',
+                    prop: 'address',
+                    showOverflowTooltip: true,
+                },
+                {
+                    label: '操作',
+                    type: 'handler',
+                    width: '150px',
+                    fixed: 'right',
+                    slotName: 'handler',
                 },
             ],
             selected: [],
+            tableData: [
+                {
+                    date: '2016-05-02',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1518 弄',
+                    zip: 200333,
+                },
+                {
+                    date: '2016-05-04',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1517 弄',
+                    zip: 200333,
+                },
+                {
+                    date: '2016-05-01',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1519 弄',
+                    zip: 200333,
+                },
+                {
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1516 弄',
+                    zip: 200333,
+                },
+            ],
         };
     },
     methods: {
@@ -181,11 +276,14 @@ export default {
         submit() {
             console.log(this.form);
         },
-        toCustom() {
-            this.$refs.custom.open(this.selected);
-        },
+        // toCustom() {
+        //     this.$refs.custom.open(this.selected);
+        // },
         save(columns) {
             this.selected = columns;
+        },
+        handlerAdd(row) {
+            console.log(row);
         },
         async add() {
             this.$msgbox({
@@ -231,10 +329,22 @@ export default {
 </script>
 
 <style lang="scss" module="s">
+// :global {
+//   .el-table th {
+//     background: #f8f8f9;
+//      font-weight: 800 !important;
+//   }
+//   .el-table thead {
+//     color: $color-title;
+//     .cell{
+//         font-weight: bold;
+//     }
+//   }
+// }
 .view {
   position: relative;
 }
-.tableCustom{
-    position: relative;
+.tableCustom {
+  position: relative;
 }
 </style>

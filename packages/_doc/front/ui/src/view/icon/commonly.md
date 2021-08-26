@@ -73,7 +73,10 @@ export default {
                 'square',
                 'date',
                 'import',
-                'export'
+                'export',
+                'expansion',
+                'shrink',
+                'table-custom',
             ]
         }
     },

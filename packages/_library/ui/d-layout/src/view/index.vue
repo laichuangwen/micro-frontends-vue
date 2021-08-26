@@ -1,42 +1,42 @@
 <template>
-    <el-container :class="s.view">
-        <el-drawer v-if="width<900"
-            :visible.sync="drawerShow"
-            direction="ltr"
-            size="200px"
-            :wrapperClosable="true"
-            :with-header="false">
-            <el-aside width="auto">
-                <slot name="aside"></slot>
-            </el-aside>
-        </el-drawer>
-        <el-aside v-else
-            width="auto">
-            <slot name="aside"></slot>
-        </el-aside>
-        <el-container :class="s.container">
-            <el-header v-if="fixedHeader"
-                height="50px">
-                <slot name="header"></slot>
-            </el-header>
-            <el-main v-loading="loading">
-                <el-header v-if="!fixedHeader"
-                    height="50px">
-                    <slot name="header"></slot>
-                </el-header>
-                <div :class="s.main"
-                    v-show="!view.type">
-                    <slot></slot>
-                </div>
-                <!-- 提示视图 -->
-                <Tip v-if="view.type"
-                    :type="view.type"
-                    :title="view.title"
-                    :tip="view.tip"
-                    :back="view.back" />
-            </el-main>
-        </el-container>
+  <el-container :class="s.view">
+    <el-drawer
+      v-if="width < 900"
+      :visible.sync="drawerShow"
+      direction="ltr"
+      size="200px"
+      :wrapperClosable="true"
+      :with-header="false"
+    >
+      <el-aside width="auto">
+        <slot name="aside"></slot>
+      </el-aside>
+    </el-drawer>
+    <el-aside v-else width="auto">
+      <slot name="aside"></slot>
+    </el-aside>
+    <el-container :class="s.container">
+      <el-header v-if="fixedHeader" height="50px">
+        <slot name="header"></slot>
+      </el-header>
+      <el-main v-loading="loading">
+        <el-header v-if="!fixedHeader" height="50px">
+          <slot name="header"></slot>
+        </el-header>
+        <div :class="{[s.main]:true,[s.fullscreen]:mainFullscreen}" v-show="!view.type">
+          <slot></slot>
+        </div>
+        <!-- 提示视图 -->
+        <Tip
+          v-if="view.type"
+          :type="view.type"
+          :title="view.title"
+          :tip="view.tip"
+          :back="view.back"
+        />
+      </el-main>
     </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -54,6 +54,10 @@ export default {
         fixedHeader: {
             type: Boolean,
             default: true,
+        },
+        mainFullscreen: {
+            type: Boolean,
+            default: false,
         },
         loading: {
             type: Boolean,
@@ -105,17 +109,26 @@ export default {
 
 <style lang="scss" module="s">
 .view {
-    :global(.el-header) {
-        padding: 0 !important;
-    }
-    :global(.el-main) {
-        padding: 0 !important;
-    }
-    .container {
-        height: 100vh;
-    }
-    .main {
-        padding: 24px;
-    }
+  :global(.el-header) {
+    padding: 0 !important;
+  }
+  :global(.el-main) {
+    padding: 0 !important;
+  }
+  .container {
+    height: 100vh;
+  }
+  .main {
+    padding: 24px;
+  }
+  .fullscreen {
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px !important;
+    top: 0px !important;
+    background-color: white;
+    z-index: 9999;
+  }
 }
 </style>

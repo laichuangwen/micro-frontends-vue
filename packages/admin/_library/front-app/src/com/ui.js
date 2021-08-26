@@ -5,6 +5,8 @@ import DCheckboxSmart from '@support/d-checkbox-smart';
 import DFormSmart from '@support/d-form-smart';
 import DSearchWrap from '@support/d-search-wrap';
 import DTableCustom from '@support/d-table-custom';
+import DTableSmart from '@support/d-table-smart';
+import DTableTool from '@support/d-table-tool';
 
 export default {
     async install(Vue) {
@@ -15,5 +17,7 @@ export default {
         Vue.component('DFormSmart', DFormSmart);
         Vue.component('DSearchWrap', DSearchWrap);
         Vue.component('DTableCustom', DTableCustom);
+        Vue.component('DTableTool', DTableTool);
+        Vue.component('DTableSmart', DTableSmart);
     },
 };

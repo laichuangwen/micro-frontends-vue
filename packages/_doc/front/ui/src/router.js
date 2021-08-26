@@ -66,6 +66,14 @@ export default [
                 },
             },
             {
+                name: 'ui.table-plus',
+                path: 'table-plus',
+                component: () => import('./view/table-plus/index.md'),
+                meta: {
+                    title: 'TablePlus 表格拓展',
+                },
+            },
+            {
                 name: 'ui.table-custom',
                 path: 'table-custom',
                 component: () => import('./view/table-custom/index.md'),

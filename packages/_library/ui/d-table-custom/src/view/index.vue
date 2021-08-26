@@ -103,7 +103,7 @@ export default {
         },
         offsetTop: {
             type: Number,
-            default: 0,
+            default: 8,
         },
     },
     data() {
@@ -137,7 +137,7 @@ export default {
     methods: {
         open(selected = []) {
             this.show = true;
-            const extraColumn = this.dynamicColumns.filter((item) => item.label === '操作');
+            const extraColumn = this.dynamicColumns.filter((item) => ['selection', 'index', 'expand', 'handler'].includes(item.type));
             const extraLabel = extraColumn.map((item) => item.label);
             this.extraColumn = extraColumn;
             let columns = selected;
@@ -150,7 +150,7 @@ export default {
             // parentNode 可能会较久加载出来，故计算时间延迟 1s
             setTimeout(() => {
                 // 容器高度 + margin-bottom + 偏移距离
-                this.top = this.$refs.column.parentNode.offsetHeight + 16 + this.offsetTop;
+                this.top = this.$refs.column.parentNode.offsetHeight + this.offsetTop;
             }, 1000);
         },
         // 选中字段处理

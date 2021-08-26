@@ -106,12 +106,6 @@ export default {
                 }
             }
         },
-        focus() {
-            this.$refs.select.focus();
-        },
-        blur() {
-            this.$refs.select.blur();
-        },
     },
     render(createElement) {
         // el-radio
