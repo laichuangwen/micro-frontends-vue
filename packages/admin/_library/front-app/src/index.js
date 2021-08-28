@@ -1,4 +1,5 @@
 import env from './env';
+import auth from './auth';
 import util from './util';
 import icon from './icon';
 import router from './router';
@@ -26,6 +27,7 @@ export default (App, option) => {
             .task('主题', ['基础组件'], (app) => theme(app))
             .task('请求处理', ['基础组件'], (app) => api(app))
             .task('状态管理', ['环境', '请求处理'], (app) => store(app))
+            .task('权限处理', ['状态管理'], (app) => auth(app))
             .task('主应用状态管理', ['状态管理'], (app) => InitMainStore(app))
             .task('主应用路由钩子', ['基础组件', '路由', '主应用状态管理'], (app) => RouterMainHooks(app));
     } else {
@@ -38,6 +40,7 @@ export default (App, option) => {
             .task('主题', ['基础组件'], (app) => theme(app))
             .task('请求处理', ['基础组件'], (app) => api(app))
             .task('状态管理', ['环境', '请求处理'], (app) => store(app))
+            .task('权限处理', ['状态管理'], (app) => auth(app))
             .task('微应用状态管理', ['环境', '请求处理'], (app) => InitMicroStore(app, option))
             .task('微应用路由钩子', ['基础组件', '路由', '状态管理', '微应用状态管理'], (app) => RouterMicroHooks(app));
     }

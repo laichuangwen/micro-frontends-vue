@@ -168,7 +168,7 @@ export default {
         Vue.prototype.$alert = MessageBox.alert;
         Vue.prototype.$confirm = MessageBox.confirm;
         Vue.prototype.$prompt = MessageBox.prompt;
-        Vue.prototype.$notify = Notification;
-        Vue.prototype.$message = Message;
+        Vue.$notify = Vue.prototype.$notify = Notification;
+        Vue.$message = Vue.prototype.$message = Message;
     },
 };

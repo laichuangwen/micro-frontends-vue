@@ -38,7 +38,7 @@ export default {
     methods: {
         init() {
             const rect = this.$refs.options.getBoundingClientRect();
-            const oversize = rect.height > 48;
+            const oversize = rect.height > 51;
             this.needMore = oversize;
         },
         handlerTab() {

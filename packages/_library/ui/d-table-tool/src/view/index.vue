@@ -2,7 +2,7 @@
   <div>
     <div :class="s.btns">
       <div
-        v-for="(item, index) in list"
+        v-for="(item, index) in events"
         :key="index"
         type="text"
         :class="s.btn"
@@ -33,57 +33,8 @@ export default {
     },
     data() {
         return {
-            // list: [],
-            fullscreen: false,
         };
     },
-    computed: {
-        list() {
-            return [
-                {
-                    title: !this.fullscreen ? '全屏' : '退出全屏',
-                    icon: !this.fullscreen ? 'expansion' : 'shrink',
-                    event: () => {
-                        this.fullscreen = !this.fullscreen;
-                        // 微前端专属到store
-                        this.$ctx._mainApp && this.$ctx._mainApp.setGlobalState({
-                            mainFullscreen: this.fullscreen,
-                        });
-                        this.$emit('fullscreen', this.fullscreen);
-                    },
-                },
-                {
-                    title: '刷新',
-                    icon: 'refresh',
-                    event: () => {
-                        this.$emit('refresh');
-                    },
-                },
-                ...this.events,
-            ];
-        },
-    },
-    // watch: {
-    //     events: {
-    //         immediate: true,
-    //         handler() {
-    //             this.$set(this, 'list', [
-    //                 {
-    //                     title: !this.fullscreen ? '全屏' : '退出全屏',
-    //                     icon: 'refresh',
-    //                     event: () => {
-    //                         this.fullscreen = !this.fullscreen;
-    //                         this.$ctx._mainApp && this.$ctx._mainApp.setGlobalState({
-    //                             mainFullscreen: !this.fullscreen,
-    //                         });
-    //                         this.$emit('refresh');
-    //                     },
-    //                 },
-    //                 ...this.events,
-    //             ]);
-    //         },
-    //     },
-    // },
 };
 </script>
 

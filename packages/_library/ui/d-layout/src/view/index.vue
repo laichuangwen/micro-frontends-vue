@@ -129,6 +129,7 @@ export default {
     top: 0px !important;
     background-color: white;
     z-index: 9999;
+    overflow-y: scroll;
   }
 }
 </style>

@@ -17,6 +17,12 @@
                     取消
                 </el-button>
                 <el-button
+                v-if="resetShow"
+                    type="text"
+                    @click="reset">
+                    重置
+                </el-button>
+                <el-button
                     type="primary"
                     @click="submit">
                     保存
@@ -103,7 +109,11 @@ export default {
         },
         offsetTop: {
             type: Number,
-            default: 8,
+            default: 16,
+        },
+        resetShow: {
+            type: Boolean,
+            default: false,
         },
     },
     data() {
@@ -111,7 +121,7 @@ export default {
             show: false,
             selected: [],
             top: 0,
-            extraColumn: [], // 不可操作但又必须展示的列，如：操作
+            extraColumn: [], // 不可操作但又必须展示的列 如：'selection', 'index', 'expand', 'handler'
             dynamicColumns: [],
         };
     },
@@ -137,6 +147,7 @@ export default {
     methods: {
         open(selected = []) {
             this.show = true;
+            // 不可操作但又必须展示的列 如：'selection', 'index', 'expand', 'handler'
             const extraColumn = this.dynamicColumns.filter((item) => ['selection', 'index', 'expand', 'handler'].includes(item.type));
             const extraLabel = extraColumn.map((item) => item.label);
             this.extraColumn = extraColumn;
@@ -172,10 +183,15 @@ export default {
         },
         async submit() {
             const selected = [
+                ...this.dynamicColumns.filter((item) => ['selection', 'index', 'expand'].includes(item.type)),
                 ...this.selected,
-                ...this.extraColumn,
+                ...this.dynamicColumns.filter((item) => ['handler'].includes(item.type)),
             ];
             this.$emit('save', selected);
+            this.show = false;
+        },
+        reset() {
+            this.$emit('reset');
             this.show = false;
         },
         close() {

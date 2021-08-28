@@ -89,6 +89,14 @@ export default [
                     title: 'TableTool 表格工具',
                 },
             },
+            {
+                name: 'ui.table-smart',
+                path: 'table-smart',
+                component: () => import('./view/table-smart/index.md'),
+                meta: {
+                    title: 'TableSmart 智能表格',
+                },
+            },
         ],
     },
 ];

@@ -1,20 +1,59 @@
 <script>
+import VEmpty from './empty.vue';
+
 export default {
+    components: {
+        VEmpty,
+    },
     data() {
-        return {};
+        return {
+            loading: {},
+        };
+    },
+    mounted() {
+        this.loading = this.$loading({
+            lock: true,
+            customClass: this.s.customLoding,
+            text: this.$attrs.loadingText || '加载中',
+            spinner: 'el-icon-loading',
+            target: document.querySelector('.el-table__body-wrapper'),
+        });
     },
     render(createElement) {
         const { columns = [] } = this.$attrs;
-        // 加上递归
-        const tableColumn = (item) => createElement('el-table-column', {
+        // 加载
+        this.$nextTick(() => {
+            if (this.$attrs.loading === undefined) {
+                this.loading.close();
+            } else {
+                this.loading.visible = this.$attrs.loading;
+            }
+        });
+        const slots = createElement('VEmpty', {
+            slot: 'empty',
             props: {
-                ...item,
+                text: this.$attrs.emptyText,
+                loading: this.$attrs.loading,
             },
-            scopedSlots: {
-                default: this.$scopedSlots[item.slotName] || '',
-                header: this.$scopedSlots[item.slotHeaderName] || '',
+        });
+        // 加上递归
+        const tableColumn = (item) => createElement(
+            'el-table-column',
+            {
+                props: {
+                    ...item,
+                },
+                scopedSlots: {
+                    default: this.$scopedSlots[item.slotName] || '',
+                    header: this.$scopedSlots[item.slotHeaderName] || '',
+                },
             },
-        }, [item.children && item.children.length && item.children.map((list) => tableColumn(list))]);
+            [
+                item.children
+            && item.children.length
+            && item.children.map((list) => tableColumn(list)),
+            ],
+        );
         return createElement(
             'el-table',
             {
@@ -26,8 +65,11 @@ export default {
                 on: {
                     ...this.$listeners,
                 },
+                scopedSlots: {
+                    append: this.$scopedSlots.append,
+                },
             },
-            [...columns.map((item) => tableColumn(item))],
+            [slots, ...columns.map((item) => tableColumn(item))],
         );
     },
     methods: {
@@ -62,4 +104,9 @@ export default {
 };
 </script>
 
-<style lang="scss" module="s"></style>
+<style lang="scss" module="s">
+.customLoding {
+  right: 1px;
+  bottom: 1px;
+}
+</style>

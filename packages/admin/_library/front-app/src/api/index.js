@@ -30,7 +30,7 @@ export default (app, option) => {
             }, 2000);
             return Promise.reject(data.result);
         case 403:
-            Vue.$ctx.store.dispatch('vayne/view/toggle', 'denied');
+            // Vue.$ctx.store.dispatch('vayne/view/toggle', 'denied');
             return Promise.reject(data.result);
         default: {
             const errToast = config.errToast === undefined || config.errToast;

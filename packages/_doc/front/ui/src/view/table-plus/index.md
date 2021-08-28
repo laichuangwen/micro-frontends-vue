@@ -11,6 +11,8 @@ import filtersUse from './filters.md'
 import customUse from './custom.md'
 import expandUse from './expand.md'
 import treeUse from './tree.md'
+import summaryUse from './summary.md'
+import spanUse from './span.md'
 
 export default {
     components: {
@@ -26,6 +28,8 @@ export default {
         customUse,
         expandUse,
         treeUse,
+        summaryUse,
+        spanUse,
     }
 }
 </script>
@@ -42,6 +46,8 @@ export default {
 <custom-use></custom-use>
 <expand-use></expand-use>
 <tree-use></tree-use>
+<summary-use></summary-use>
+<span-use></span-use>
 
 ### TablePlus Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -116,11 +122,6 @@ export default {
 | clearFilter | 不传入参数时用于清空所有过滤条件，数据会恢复成未过滤的状态，也可传入由columnKey组成的数组以清除指定列的过滤条件 | columnKey |
 | doLayout | 对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法 | — |
 | sort | 手动对 Table 进行排序。参数`prop`属性指定排序列，`order`指定排序顺序。 | prop: string, order: string |
-
-### TablePlus Slot
-| name | 说明 |
-|------|--------|
-| append | 插入至表格最后一行之后的内容，如果需要对表格的内容进行无限滚动操作，可能需要用到这个 slot。若表格有合计行，该 slot 会位于合计行之上。 |
 
 ### TablePlus  column
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |

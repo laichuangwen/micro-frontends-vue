@@ -5,6 +5,10 @@
     "main": "./src/index.js",
     "license": "MIT",
     "dependencies": {
+        "@support/d-table-plus": "0.0.1",
+        "@support/d-table-tool": "0.0.1",
+        "@support/d-table-custom": "0.0.1",
+        "axios": "0.21.1"
     },
     "devDependencies": {
     }

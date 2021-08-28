@@ -16,6 +16,7 @@
         "@support/d-form-smart": "0.0.1",
         "@support/d-search-wrap": "0.0.1",
         "@support/d-table-custom": "0.0.1",
+        "@support/d-table-smart": "0.0.1",
         "@support/d-table-tool": "0.0.1",
         "@support/d-table-plus": "0.0.1",
 		"@support/front-api": "0.0.1",
