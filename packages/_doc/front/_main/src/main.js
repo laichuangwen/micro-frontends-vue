@@ -13,30 +13,33 @@ const app = createApp();
 frontApp(app, option)
     .use(app.getAllTask())
     .start();
-// 注册主应用
-registerMicroApps([
+
+const appList = [
     {
         name: 'core',
-        entry: '//localhost:20001',
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/core/` : '//localhost:20001',
         container: '#app-container',
         activeRule: '/core',
     },
     {
         name: 'ui',
-        entry: '//localhost:20002',
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/ui/` : '//localhost:20002',
         container: '#app-container',
         activeRule: '/ui',
     },
     {
         name: 'guide',
-        entry: '//localhost:20003',
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/guide/` : '//localhost:20003',
         container: '#app-container',
         activeRule: '/guide',
     },
     {
         name: 'product-admin',
-        entry: '//localhost:20004',
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/product-admin/` : '//localhost:20004',
         container: '#app-container',
         activeRule: '/product-admin',
     },
-]);
+];
+console.log('应用列表', appList);
+// 注册主应用
+registerMicroApps(appList);

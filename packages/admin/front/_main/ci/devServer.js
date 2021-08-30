@@ -5,7 +5,8 @@ launch.devServer({
         open: true, // 主应用默认打开
         proxy: { // 代理
             '/bms-api': {
-                target: 'http://192.168.10.16:8888',
+                target: 'http://161.189.204.238:8080',
+                logLevel: 'silent',
             },
         },
     },

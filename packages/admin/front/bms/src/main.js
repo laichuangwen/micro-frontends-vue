@@ -10,7 +10,7 @@ const option = {
     env: {
         sys: 'bms',
     },
-    base: 'bms',
+    base: '/bms',
     routes: routerList,
 };
 

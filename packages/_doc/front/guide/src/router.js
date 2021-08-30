@@ -1,8 +1,8 @@
 export default [
     {
         name: 'guide',
-        path: '/guide',
-        redirect: '/guide/introduce',
+        path: '/',
+        redirect: 'introduce',
         component: () => import('./view/index.vue'),
         meta: {
             title: '指南',

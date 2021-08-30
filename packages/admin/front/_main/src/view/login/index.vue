@@ -13,7 +13,7 @@ export default {
     methods: {
         hanlderLogin() {
             this.$ctx.auth.setToken({
-                token: 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb20uY3Vjby5zc28iLCJzdWIiOiJhY2Nlc3MtdG9rZW4iLCJhdWQiOiLotZbliJvmlociLCJqdGkiOiI3MTQ2NjE2MDM3MTg0NjM0ODgiLCJpYXQiOjE2MzAwMjg3MDAsImV4cCI6MTYzMDYzMzUwMH0.ej-Tb9A0tDuHUq-oFSowNIj1lAZDYzGBK_4FzlrvB5M',
+                token: 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb20uY3Vjby5zc28iLCJzdWIiOiJhY2Nlc3MtdG9rZW4iLCJhdWQiOiLotZbliJvmlociLCJqdGkiOiI3MTc1NjI0MzEyNzM5NTk0MjQiLCJpYXQiOjE2MzAyMjQ4MDIsImV4cCI6MTYzMDgyOTYwMn0.trPC_v1NpLata6-en5kyoXVBlrSJWuHzBzCIlwVXSk0',
                 status: 0,
             });
             this.$router.replace('center');

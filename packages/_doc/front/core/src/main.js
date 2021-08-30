@@ -11,7 +11,7 @@ const option = {
     env: {
         sys: 'core',
     },
-    base: '/',
+    base: '/core',
     routes: routerList,
 };
 

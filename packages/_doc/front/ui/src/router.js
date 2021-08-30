@@ -1,8 +1,8 @@
 export default [
     {
         name: 'ui',
-        path: '/ui',
-        redirect: '/ui/introduce',
+        path: '/',
+        redirect: 'introduce',
         component: () => import('./view/index.vue'),
         meta: {
             title: '通用UI',

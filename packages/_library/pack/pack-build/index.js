@@ -16,7 +16,8 @@ module.exports = async (option = {}) => {
     }
     for (const dir of dirs) {
         const dist_dir = path.resolve(`${frontPath}/${dir}`, './dist');
-        const slugPath = `${distPath}/${dir}`;
+
+        const slugPath = dir === '_main' ? `${distPath}/${dir}` : `${distPath}/micro/${dir}`;
         if (existsSync(slugPath)) {
             // 存在就清空
             await emptyDirSync(slugPath);

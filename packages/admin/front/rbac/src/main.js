@@ -10,7 +10,7 @@ const option = {
     env: {
         sys: 'rbac',
     },
-    base: 'rbac',
+    base: '/rbac',
     routes: routerList,
 };
 

@@ -1,8 +1,8 @@
 export default [
     {
         name: 'product-admin',
-        path: '/product-admin',
-        redirect: '/product-admin/introduce',
+        path: '/',
+        redirect: 'introduce',
         component: () => import('./view/index.vue'),
         meta: {
             title: '项目',

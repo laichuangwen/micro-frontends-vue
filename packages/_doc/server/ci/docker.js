@@ -5,5 +5,5 @@ pack({
     base: 'ali-mirror',
     username: '18377779061',
     password: 'chuang6505305',
-    name: 'docs:0.0.1',
+    name: 'docs:0.0.2',
 });

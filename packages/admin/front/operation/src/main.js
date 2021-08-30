@@ -10,7 +10,7 @@ const option = {
     env: {
         sys: 'operation',
     },
-    base: 'operation',
+    base: '/operation',
     routes: routerList,
 };
 let instance = null;

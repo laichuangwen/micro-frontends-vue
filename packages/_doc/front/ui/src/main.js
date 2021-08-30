@@ -10,7 +10,7 @@ const option = {
     env: {
         sys: 'ui',
     },
-    base: '',
+    base: '/ui',
     routes: routerList,
 };
 

@@ -11,7 +11,7 @@ const option = {
     env: {
         sys: 'ui',
     },
-    base: '',
+    base: '/product-admin',
     routes: routerList,
 };
 

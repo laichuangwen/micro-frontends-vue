@@ -1,8 +1,8 @@
 export default [
     {
         name: 'core',
-        path: '/core',
-        redirect: '/core/introduce',
+        path: '/',
+        redirect: 'introduce',
         component: () => import('./view/index.vue'),
         meta: {
             title: '核心库',

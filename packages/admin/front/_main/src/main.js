@@ -14,25 +14,26 @@ frontApp(app, option)
     .use(app.getAllTask())
     .start();
 
-const hostname = process.env.NODE_ENV === 'development' ? location.hostname : 'localhost';
-// 注册主应用
-registerMicroApps([
+const appList = [
     {
         name: 'bms',
-        entry: `//${hostname}:10001`,
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/bms/` : '//localhost:10001',
         container: '#app-container',
         activeRule: '/bms',
     },
     {
         name: 'rbac',
-        entry: `//${hostname}:10002`,
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/rbac/` : '//localhost:10002',
         container: '#app-container',
         activeRule: '/rbac',
     },
     {
         name: 'operation',
-        entry: `//${hostname}:10003`,
+        entry: process.env.NODE_ENV === 'production' ? `//${location.host}/micro/operation/` : '//localhost:10003',
         container: '#app-container',
         activeRule: '/operation',
     },
-]);
+];
+console.log('应用列表', appList);
+// 注册主应用
+registerMicroApps(appList);
