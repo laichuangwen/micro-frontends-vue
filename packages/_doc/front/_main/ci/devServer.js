@@ -1,13 +1,9 @@
 const launch = require('@support/front-launch');
+const { proxy } = require('@docs/front-config');
 
 launch.devServer({
     devServer: {
-        allowedHosts: 'all',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*',
-            'Access-Control-Allow-Headers': '*',
-        },
+        proxy,
         open: true, // 主应用默认打开
     },
 });

@@ -4,6 +4,7 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna bootstrap && node scripts/start",
+        "test": "lerna bootstrap && node scripts/test",
         "build": "lerna bootstrap && node scripts/build",
         "lint": "eslint --fix --ext .js --ext .jsx --ext .vue packages/"
     },

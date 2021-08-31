@@ -98,7 +98,7 @@ export default {
         window.removeEventListener('resize', this.getClientWidth);
     },
     render(createElement) {
-        const { topbarLeft, custom } = this.$scopedSlots;
+        const { topbarLeft } = this.$scopedSlots;
         // 处理选中
         const selection = this.isSelection
             ? createElement('VSelection', {
@@ -120,7 +120,6 @@ export default {
                 events: this.tools,
             },
             scopedSlots: {
-                default: custom,
                 left: topbarLeft,
             },
             on: {

@@ -2,6 +2,9 @@
   "name": "@admin/server",
   "private": true,
   "description": "后台管理服务",
+  "runtime": {
+    "type": "server"
+  },
   "scripts": {
     "serve": "node ci/devServer",
     "docker": "node ci/docker",
@@ -19,6 +22,7 @@
   "dependencies": {
     "@support/pack-build": "0.0.1",
     "@support/pack-docker": "0.0.1",
+    "@admin/front-config": "0.0.1",
     "npm-run-all": "^4.1.5"
   }
 }
